@@ -1,0 +1,12 @@
+<a href="" ui-sref="pages({id: (page - 1)})">Previous</a>
+<a href="" ui-sref="pages({id: (page + 1)})">Next</a>
+<div class="posts" ng-repeat="story in stories">
+  <div class="post__title"> Title: {{story.title}} </div>
+  Score: {{story.score}} |
+  <a href="{{story.url}}">{{story.url}}</a> |
+  Comments: {{story.descendants}} |
+  Time Posted: {{story.time | date:'MMM-dd HH:mm'}} |
+  <a href="" ui-sref="post({id: story.id})">Show</a>
+</div>
+
+

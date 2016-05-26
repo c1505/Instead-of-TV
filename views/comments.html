@@ -1,0 +1,8 @@
+<ul>
+  <li class="comments" ng-repeat="comment in ctrl.allComments">
+    <div ng-bind-html="comment.text"></div>
+    <ul ng-if="comment.kids">
+      <comments kids="comment.kids"></comments>
+    </ul>
+  </li>
+</ul>
