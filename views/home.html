@@ -1,16 +1,48 @@
 <h2>Text or Video?</h2>
-<h1>how about now</h1>
-<form name="select">
-  <select>
-    <option value="video">Video</option>
-    <option value="text">Text</option>
+
+
+
+<div>
+Search: <input ng-model="query" type="text"/>
+</div>
+
+
+
+
+<form ng-submit="addItem()">
+  add name:<input type="text" ng-model="title"></br>
+  add type:<input type="text" ng-model="type"></br>
+  add time:<input type="text" ng-model="time"></br>
+  add category:<input type="text" ng-model="category"></br>
+  add tags:<input type="text" ng-model="tags"></br>
+  add link:<input type="text" ng-model="link"></br>
+  <input type="submit" value="add">
 </form>
 
-what do i want here?
 
-let me build up json data so i can see what i want by filtering it
-looks like this stuff doesnt' show up
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Time</th>
+    <th>Category</th>
+    <th>Tags</th>
+    <th>Link</th>
+  </tr>
+  <tr ng-repeat="country in data | filter:query">
+<!--     <td>{{country}}</td>
+    <td>{{country + 1}}</td> -->
+    <td>{{country.title}}</td>
+    <td>{{country.type}}</td>
+    <td>{{country.time}}</td>
+    <td>{{country.category}}</td>
+    <td>{{country.tags}}</td>
+    <td><a href="{{country.link}}">{{country.link}}</td>
 
-build category.  applying a small concept to an existing application
+  </tr>
+</table>
 
-first i want to try and filter the existing data i have on the top pages
+
+
+Later
+Preview or embeded video
