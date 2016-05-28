@@ -26,5 +26,9 @@ angular
             return BasicService.story($stateParams.id);
           }
         }
+      })
+      .state('home', {
+        url: '/home',
+        templateUrl: 'views/home.html'
       });
   });

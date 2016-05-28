@@ -1,6 +1,7 @@
+Search: <input ng-model="query" type="text"/>
 <a href="" ui-sref="pages({id: (page - 1)})">Previous</a>
 <a href="" ui-sref="pages({id: (page + 1)})">Next</a>
-<div class="posts" ng-repeat="story in stories">
+<div class="posts" ng-repeat="story in stories | filter:query">
   <div class="post__title"> Title: {{story.title}} </div>
   Score: {{story.score}} |
   <a href="{{story.url}}">{{story.url}}</a> |
