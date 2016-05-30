@@ -17,6 +17,24 @@ function HomeController ($scope) {
 
   };
   $scope.sortField = 'minTime';
+  $scope.choose = function() {
+    // var num = Math.floor( (Math.random() * ($scope.data.length - 1)) + 0 )
+    var arr = []
+    do {
+      var num = Math.floor( (Math.random() * ($scope.data.length - 1)) + 0 );
+      if ( ($scope.data[num].minTime < $scope.time1) && ($scope.data[num].home == $scope.home1) ) {
+        arr.push($scope.data[num]);
+      }
+    } while ( arr.length < 3)
+    console.log(arr)
+    // pick a randome number
+    // find array at that index
+    // check if that object meets requirements
+    // if object meets requirements add to  new array
+    // if the array length is 3, eject out of the loop
+    // return the array
+  }
+  // i only want 3 that match
   $scope.data = [
  {
    "name":"Baseball Game",
