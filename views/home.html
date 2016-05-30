@@ -1,48 +1,38 @@
-<h2>Text or Video?</h2>
-
-
 
 <div>
 Search: <input ng-model="query" type="text"/>
 </div>
 
-
-
+<div>
+Time: <input ng-model="time" type="text"/>
+</div>
 
 <form ng-submit="addItem()">
-  add name:<input type="text" ng-model="title"></br>
-  add type:<input type="text" ng-model="type"></br>
-  add time:<input type="text" ng-model="time"></br>
-  add category:<input type="text" ng-model="category"></br>
-  add tags:<input type="text" ng-model="tags"></br>
-  add link:<input type="text" ng-model="link"></br>
+  add name:<input type="text" ng-model="name"></br>
+  add home:<input type="text" ng-model="home"></br>
+  add specific:<input type="text" ng-model="specific"></br>
+  add active:<input type="text" ng-model="active"></br>
+  add minTime:<input type="text" ng-model="minTime"></br>
+  add maxTime:<input type="text" ng-model="maxTime"></br>
   <input type="submit" value="add">
 </form>
 
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Type</th>
-    <th>Time</th>
-    <th>Category</th>
-    <th>Tags</th>
-    <th>Link</th>
+    <th><a href="" ng-click="sortField = 'name'">Name</a></th>
+    <th><a href="" ng-click="sortField = 'home'">Home</a></th>
+    <th><a href="" ng-click="sortField = 'specific'">Specific</a></th>
+    <th><a href="" ng-click="sortField = 'active'">Active</a></th>
+    <th><a href="" ng-click="sortField = 'minTime'">Min Time</a></th>
+    <th><a href="" ng-click="sortField = 'maxTime'">Max Time</a></th>
   </tr>
-  <tr ng-repeat="country in data | filter:query">
-<!--     <td>{{country}}</td>
-    <td>{{country + 1}}</td> -->
-    <td>{{country.title}}</td>
-    <td>{{country.type}}</td>
-    <td>{{country.time}}</td>
-    <td>{{country.category}}</td>
-    <td>{{country.tags}}</td>
-    <td><a href="{{country.link}}">{{country.link}}</td>
-
+  <tr ng-repeat="activity in data | filter:query | orderBy:sortField" ng-if="activity.minTime < (time || 1000)">
+    <td>{{activity.name}}</td>
+    <td>{{activity.home}}</td>
+    <td>{{activity.specific}}</td>
+    <td>{{activity.active}}</td>
+    <td>{{activity.minTime}}</td>
+    <td>{{activity.maxTime}}</td>
   </tr>
 </table>
-
-
-
-Later
-Preview or embeded video

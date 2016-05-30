@@ -1,65 +1,144 @@
 function HomeController ($scope) {
-  $scope.data = [
-    {
-      "title":"first",
-      "type": "Video",
-      "time": 41,
-      "link": "https://www.youtube.com/watch?v=6BI5RFi_A0M",
-      "category": "technical",
-      "tags": ""
-    },
-    {
-      "title":"second",
-      "type": "Text",
-      "time": 15,
-      "link": "http://www.atlasobscura.com/articles/the-delightful-perversity-of-quebecs-catholic-swears?utm_source=facebook.com&utm_medium=atlas-page",
-      "category": "fluff",
-      "tags": ""
-    },
-    {
-      "title":"third",
-      "type": "Video",
-      "time": 10,
-      "link": "https://www.youtube.com/watch?v=zKkUN-mJtPQ&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl",
-      "category": "technical",
-      "tags": ""
-
-    },
-    {
-      "title":"POODER",
-      "type": "Book",
-      "time": 25,
-      "link": "",
-      "category": "technical",
-      "tags": "tutorial"
-    },
-    {
-      "title":"Angular JS Tutorial with rails",
-      "type": "Text",
-      "time": 25,
-      "link": "",
-      "category": "technical",
-      "tags": "tutorial"
-    }
-  ];
   $scope.addItem= function() {
-    // alert($scope.enteredItem);
     $scope.data.push({
-      "title": $scope.title,
-      "type": $scope.type,
-      "time": $scope.time,
-      "link": $scope.link,
-      "category": $scope.category,
-      "tags": $scope.tags
+      "name":$scope.name,
+       "home":$scope.home,
+       "specific":$scope.specific,
+       "active":$scope.active,
+       "minTime":$scope.minTime,
+       "maxTime":$scope.maxTime
     });
-    $scope.title = '';
-    $scope.type = '';
-    $scope.time = '';
-    $scope.link = '';
-    $scope.category = '';
-    $scope.tags = '';
+    $scope.name = '';
+    $scope.home = '';
+    $scope.specific = '';
+    $scope.active = '';
+    $scope.minTime = '';
+    $scope.maxTime = '';
 
   };
+  $scope.sortField = 'minTime';
+  $scope.data = [
+ {
+   "name":"Baseball Game",
+   "home":"away",
+   "specific":"general",
+   "active":"lazy",
+   "minTime":180,
+   "maxTime":240
+ },
+ {
+   "name":"Netlfix",
+   "home":"home",
+   "specific":"general",
+   "active":"lazy",
+   "minTime":30,
+   "maxTime":180
+ },
+ {
+   "name":"Veep ",
+   "home":"home",
+   "specific":"specific",
+   "active":"lazy",
+   "minTime":30,
+   "maxTime":30
+ },
+ {
+   "name":"Game of thrones",
+   "home":"home",
+   "specific":"specific",
+   "active":"lazy",
+   "minTime":60,
+   "maxTime":60
+ },
+ {
+   "name":"Eno River Hike",
+   "home":"away",
+   "specific":"specific",
+   "active":"active",
+   "minTime":120,
+   "maxTime":240
+ },
+ {
+   "name":"Walk",
+   "home":"home",
+   "specific":"general",
+   "active":"active",
+   "minTime":10,
+   "maxTime":60
+ },
+ {
+   "name":"Scrabble",
+   "home":"home",
+   "specific":"specific",
+   "active":"lazy",
+   "minTime":30,
+   "maxTime":90
+ },
+ {
+   "name":"Dance off dance central",
+   "home":"home",
+   "specific":"specific",
+   "active":"active",
+   "minTime":10,
+   "maxTime":60
+ },
+ {
+   "name":"color",
+   "home":"home",
+   "specific":"general",
+   "active":"lazy",
+   "minTime":5,
+   "maxTime":60
+ },
+ {
+   "name":"cook blue apron",
+   "home":"home",
+   "specific":"specific",
+   "active":"lazy",
+   "minTime":20,
+   "maxTime":90
+ },
+ {
+   "name":"cook other",
+   "home":"home",
+   "specific":"general",
+   "active":"lazy",
+   "minTime":10,
+   "maxTime":360
+ },
+ {
+   "name":"Frisbee",
+   "home":"home",
+   "specific":"specific",
+   "active":"active",
+   "minTime":10,
+   "maxTime":30
+ },
+ {
+   "name":"Jump Rope",
+   "home":"home",
+   "specific":"specific",
+   "active":"active",
+   "minTime":10,
+   "maxTime":10
+ },
+ {
+   "name":"Bubbles",
+   "home":"home",
+   "specific":"specific",
+   "active":"lazy",
+   "minTime":5,
+   "maxTime":5
+ },
+ {
+   "name":"Indoor Climbing at TRC",
+   "home":"away",
+   "specific":"specific",
+   "active":"active",
+   "minTime":60,
+   "maxTime":240
+ }
+];
 }
 
 angular
