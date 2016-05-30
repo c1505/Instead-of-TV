@@ -1,14 +1,8 @@
-<h2>Choose Something</h2>
-<form class="box" ng-submit="choose()">
-  Time:<input type="text" ng-model="time1">
-  <input type="radio" ng-model="home1" value="home">Home</input>
-  <input type="radio" ng-model="home1" value="away">Away</br>
-  <input type="submit">
-</form>
 
 <div class="box">
-  Search: <input ng-model="query" type="text"/></br>
-  Time: <input ng-model="time" type="text"/>
+  <h2>Search Table</h2>
+  Query: <input ng-model="query" type="text"/></br>
+  Available Time: <input ng-model="time" type="text"/>
 </div>
 
 <form class="box" ng-submit="addItem()">
