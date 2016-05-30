@@ -16,25 +16,30 @@ function HomeController ($scope) {
     $scope.maxTime = '';
 
   };
+  $scope.picked = [];
   $scope.sortField = 'minTime';
   $scope.choose = function() {
-    // var num = Math.floor( (Math.random() * ($scope.data.length - 1)) + 0 )
-    var arr = []
+    $scope.picked = [];
+    var count = 0;
+    var numArray = [];
     do {
-      var num = Math.floor( (Math.random() * ($scope.data.length - 1)) + 0 );
+      count = count + 1;
+      do {
+        num = Math.floor( (Math.random() * ($scope.data.length - 1)) + 0 );
+        inArray = numArray.find(function(number){return number == this}, num)
+      } while (inArray)
+      numArray.push(num);
       if ( ($scope.data[num].minTime < $scope.time1) && ($scope.data[num].home == $scope.home1) ) {
-        arr.push($scope.data[num]);
+        $scope.picked.push($scope.data[num]);
       }
-    } while ( arr.length < 3)
-    console.log(arr)
-    // pick a randome number
-    // find array at that index
-    // check if that object meets requirements
-    // if object meets requirements add to  new array
-    // if the array length is 3, eject out of the loop
-    // return the array
+    } while ( ($scope.picked.length < 3) && (count < 100 ) )
+    if ($scope.picked.length == 0) {
+      alert("no matches found.  try again");
+    }
+    $scope.time1 = "";
+    $scope.home1 = "";
   }
-  // i only want 3 that match
+
   $scope.data = [
  {
    "name":"Baseball Game",
@@ -155,6 +160,14 @@ function HomeController ($scope) {
    "active":"active",
    "minTime":60,
    "maxTime":240
+ },
+  {
+   "name":"Duke gardens",
+   "home":"away",
+   "specific":"specific",
+   "active":"active",
+   "minTime":60,
+   "maxTime":180
  }
 ];
 }

@@ -1,23 +1,30 @@
 <h2>Choose Something</h2>
-<form ng-submit="choose()">
+<form class="box" ng-submit="choose()">
   Time:<input type="text" ng-model="time1">
-  Home or Away:<input type="text" ng-model="home1">
+  <input type="radio" ng-model="home1" value="home">Home</input>
+  <input type="radio" ng-model="home1" value="away">Away</br>
   <input type="submit">
 </form>
 
-<div>
-Search: <input ng-model="query" type="text"/>
+<div class="box">
+  Search: <input ng-model="query" type="text"/></br>
+  Time: <input ng-model="time" type="text"/>
 </div>
 
-<div>
-Time: <input ng-model="time" type="text"/>
-</div>
-
-<form ng-submit="addItem()">
+<form class="box" ng-submit="addItem()">
   add name:<input type="text" ng-model="name"></br>
-  add home:<input type="text" ng-model="home"></br>
-  add specific:<input type="text" ng-model="specific"></br>
-  add active:<input type="text" ng-model="active"></br>
+  <!-- add home:<input type="text" ng-model="home"></br> -->
+  <input type="radio" ng-model="home" value="home">Home</input>
+  <input type="radio" ng-model="home" value="away">Away</br>
+
+  <!-- add active:<input type="text" ng-model="active"></br> -->
+  <input type="radio" ng-model="active" value="active">Active</input>
+  <input type="radio" ng-model="active" value="lazy">Lazy</br>
+
+  <!-- add specific:<input type="text" ng-model="specific"></br> -->
+  <input type="radio" ng-model="specific" value="specific">Specific</input>
+  <input type="radio" ng-model="specific" value="general">General</br>
+
   add minTime:<input type="text" ng-model="minTime"></br>
   add maxTime:<input type="text" ng-model="maxTime"></br>
   <input type="submit" value="add">

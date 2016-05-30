@@ -31,5 +31,10 @@ angular
         url: '/home',
         templateUrl: 'views/home.html',
         controller: "HomeController"
-      });
+      })
+      .state('picker', {
+        url: '/picker',
+        templateUrl: 'views/picker.html',
+        controller: "HomeController"
+      })
   });

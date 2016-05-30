@@ -1,0 +1,25 @@
+<form class="box" ng-submit="choose()">
+  Time:<input type="text" ng-model="time1">
+  <input type="radio" ng-model="home1" value="home">Home</input>
+  <input type="radio" ng-model="home1" value="away">Away</br>
+  <input type="submit">
+</form>
+
+<table>
+  <tr>
+    <th><a href="" ng-click="sortField = 'name'">Name</a></th>
+    <th><a href="" ng-click="sortField = 'home'">Home</a></th>
+    <th><a href="" ng-click="sortField = 'specific'">Specific</a></th>
+    <th><a href="" ng-click="sortField = 'active'">Active</a></th>
+    <th><a href="" ng-click="sortField = 'minTime'">Min Time</a></th>
+    <th><a href="" ng-click="sortField = 'maxTime'">Max Time</a></th>
+  </tr>
+  <tr ng-repeat="activity in picked | orderBy:sortField track by $index">
+    <td>{{activity.name}}</td>
+    <td>{{activity.home}}</td>
+    <td>{{activity.specific}}</td>
+    <td>{{activity.active}}</td>
+    <td>{{activity.minTime}}</td>
+    <td>{{activity.maxTime}}</td>
+  </tr>
+</table>
