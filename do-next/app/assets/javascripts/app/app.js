@@ -1,15 +1,15 @@
 angular
-  .module('app', ['ui.router', 'ngSanitize'])
+  .module('app', ['ui.router', 'templates'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('top', {
         url: '/top',
-        templateUrl: "views/posts.html",
+        templateUrl: "posts.html",
         controller: "TopController"
       })
       .state('pages', {
         url: '/pages/:id',
-        templateUrl: 'views/posts.html',
+        templateUrl: 'posts.html',
         controller: "PagesController as pages",
         resolve: {
           pages: function(BasicService, $stateParams) {
@@ -19,7 +19,7 @@ angular
       })
       .state('post', {
         url: '/post/:id',
-        templateUrl: 'views/post.html',
+        templateUrl: 'post.html',
         controller: "OtherController as post",
         resolve: {
           post: function(BasicService, $stateParams) {
@@ -29,12 +29,12 @@ angular
       })
       .state('home', {
         url: '/home',
-        templateUrl: 'views/home.html',
+        templateUrl: 'home.html',
         controller: "HomeController"
       })
       .state('picker', {
         url: '/picker',
-        templateUrl: 'views/picker.html',
+        templateUrl: 'picker.html',
         controller: "HomeController"
       })
   });
