@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  home: MyString
+  specific: MyString
+  active: MyString
+  min_time: 1
+  max_time: 1
+
+two:
+  name: MyString
+  home: MyString
+  specific: MyString
+  active: MyString
+  min_time: 1
+  max_time: 1

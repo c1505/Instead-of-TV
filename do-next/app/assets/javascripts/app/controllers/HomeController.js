@@ -1,4 +1,5 @@
-function HomeController ($scope) {
+function HomeController ($scope, Activities) {
+  $scope.rails = Activities.index();
   $scope.addItem= function() {
     $scope.data.push({
       "name":$scope.name,
