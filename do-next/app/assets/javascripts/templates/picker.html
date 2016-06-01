@@ -5,21 +5,24 @@
   <input type="submit">
 </form>
 
-<table>
-  <tr>
-    <th><a href="" ng-click="sortField = 'name'">Name</a></th>
-    <th><a href="" ng-click="sortField = 'home'">Home</a></th>
-    <th><a href="" ng-click="sortField = 'specific'">Specific</a></th>
-    <th><a href="" ng-click="sortField = 'active'">Active</a></th>
-    <th><a href="" ng-click="sortField = 'minTime'">Min Time</a></th>
-    <th><a href="" ng-click="sortField = 'maxTime'">Max Time</a></th>
-  </tr>
-  <tr ng-repeat="activity in picked | orderBy:sortField track by $index">
-    <td>{{activity.name}}</td>
-    <td>{{activity.home}}</td>
-    <td>{{activity.specific}}</td>
-    <td>{{activity.active}}</td>
-    <td>{{activity.minTime}}</td>
-    <td>{{activity.maxTime}}</td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <th><a href="" ng-click="sortField = 'name'">Name</a></th>
+      <th><a href="" ng-click="sortField = 'home'">Home</a></th>
+      <th><a href="" ng-click="sortField = 'specific'">Specific</a></th>
+      <th><a href="" ng-click="sortField = 'mental_attention'">Mental Attention</a></th>
+      <th><a href="" ng-click="sortField = 'movement'">Movement</a></th>
+      <th><a href="" ng-click="sortField = 'min_time'">Min Time</a></th>
+      <th><a href="" ng-click="sortField = 'max_time'">Max Time</a></th>
+    </tr>
+    <tr ng-repeat="activity in picked | orderBy:sortField track by $index">
+      <td>{{activity.name}}</td>
+      <td>{{activity.home}}</td>
+      <td>{{activity.specific}}</td>
+      <td>{{activity.mental_attention}}</td>
+      <td>{{activity.movement}}</td>
+      <td>{{activity.min_time}}</td>
+      <td>{{activity.max_time}}</td>
+
+    </tr>
+  </table>

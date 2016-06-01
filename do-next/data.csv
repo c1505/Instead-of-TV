@@ -1,0 +1,22 @@
+name,home,specific,mental_attention,movement,min_time,max_time
+Baseball Game,away,general,passive,sedentary,180,240
+Netlfix,home,general,passive,sedentary,30,180
+Veep,home,specific,passive,sedentary,30,30
+Game of thrones,home,specific,passive,sedentary,60,60
+Eno River Hike,away,specific,doing,vigorous,120,240
+Walk,home,general,doing,walking,10,60
+Scrabble,home,specific,"doing, thinking",sedentary,30,90
+Dance off dance central,home,specific,doing,vigorous,10,60
+color,home,general,doing,sedentary,5,60
+cook blue apron,home,specific,"doing, thinking",walking,20,90
+cook other,home,general,doing,walking,10,360
+Frisbee,home,specific,doing,walking,10,30
+Jump Rope,home,specific,doing,vigorous,10,10
+Bubbles,home,specific,doing,walking,5,5
+Indoor Climbing at TRC,away,specific,doing,vigorous,60,240
+Salsa Dance Lessons,away,general,"doing, thinking",vigorous,120,180
+Tiger Rescue,away,specific,doing,walking,180,240
+Lemer Center,away,specific,doing,walking,180,240
+Duke Gardens,away,specific,doing,walking,90,180
+Margaritas,home,specific,doing,sedentary,10,60
+Go for drinks,away,general,passive,sedentary,60,180

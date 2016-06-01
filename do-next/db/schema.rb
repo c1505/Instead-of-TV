@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20160601002844) do
     t.string   "name"
     t.string   "home"
     t.string   "specific"
-    t.string   "active"
+    t.string   "mental_attention"
+    t.string   "movement"
     t.integer  "min_time"
     t.integer  "max_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end
