@@ -5,9 +5,21 @@ function HomeController ($scope, Activities) {
   }
   $scope.done = function(activity) {
     activity.editorEnabled = false;
+    var item = {
+      // using this more than once.  maybe also pull it out
+       "name":activity.name,
+       "home":activity.home,
+       "specific":activity.specific,
+       "mental_attention":activity.mental_attention,
+       "movement":activity.movement,
+       "min_time":activity.min_time,
+       "max_time":activity.max_time
+    };
+    Activities.update(item)
   }
   $scope.addItem= function() {
     var item = {
+      // using this more than once.  maybe also pull it out
        "name":$scope.name,
        "home":$scope.home,
        "specific":$scope.specific,
