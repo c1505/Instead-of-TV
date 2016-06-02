@@ -5,18 +5,21 @@ function HomeController ($scope, Activities) {
       "name":$scope.name,
        "home":$scope.home,
        "specific":$scope.specific,
-       "active":$scope.active,
-       "minTime":$scope.minTime,
-       "maxTime":$scope.maxTime
+       "mental_attention":$scope.mental_attention,
+       "movement":$scope.movement,
+       "min_time":$scope.min_time,
+       "max_time":$scope.max_time
     });
     $scope.name = '';
     $scope.home = '';
     $scope.specific = '';
-    $scope.active = '';
-    $scope.minTime = '';
-    $scope.maxTime = '';
+    $scope.mental_attention = '';
+    $scope.movement = '';
+    $scope.min_time = '';
+    $scope.max_time = '';
 
   };
+
   $scope.picked = [];
   $scope.sortField = 'min_time';
 

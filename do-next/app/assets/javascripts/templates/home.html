@@ -6,21 +6,23 @@
 </div>
 
 <form class="box" ng-submit="addItem()">
-  add name:<input type="text" ng-model="name"></br>
-  <!-- add home:<input type="text" ng-model="home"></br> -->
+  Activity Name:<input type="text" ng-model="name"></br>
+
   <input type="radio" ng-model="home" value="home">Home</input>
   <input type="radio" ng-model="home" value="away">Away</br>
 
-  <!-- add active:<input type="text" ng-model="active"></br> -->
-  <input type="radio" ng-model="active" value="active">Active</input>
-  <input type="radio" ng-model="active" value="lazy">Lazy</br>
+  <input type="radio" ng-model="movement" value="sedentary">Sedentary</input>
+  <input type="radio" ng-model="movement" value="walking">Walking
+  <input type="radio" ng-model="movement" value="vigorous">Vigorous</br>
 
-  <!-- add specific:<input type="text" ng-model="specific"></br> -->
+
   <input type="radio" ng-model="specific" value="specific">Specific</input>
   <input type="radio" ng-model="specific" value="general">General</br>
 
-  add minTime:<input type="text" ng-model="minTime"></br>
-  add maxTime:<input type="text" ng-model="maxTime"></br>
+  Mental Attention:<input type="text" ng-model="mental_attention"></br>
+
+  Minimum Time:<input type="text" ng-model="min_time"></br>
+  Maximum Time:<input type="text" ng-model="max_time"></br>
   <input type="submit" value="add">
 </form>
 
