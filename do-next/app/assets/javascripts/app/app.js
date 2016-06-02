@@ -37,4 +37,13 @@ angular
         templateUrl: 'picker.html',
         controller: "HomeController"
       })
+      .state('home.item', {
+
+      })
+      .state('activities', {
+
+      })
+      .state('activities.item', {
+        
+      })
   });

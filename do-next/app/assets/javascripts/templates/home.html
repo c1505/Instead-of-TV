@@ -35,15 +35,46 @@
       <th><a href="" ng-click="sortField = 'movement'">Movement</a></th>
       <th><a href="" ng-click="sortField = 'min_time'">Min Time</a></th>
       <th><a href="" ng-click="sortField = 'max_time'">Max Time</a></th>
+      <th></th>
+
     </tr>
-    <tr ng-repeat="activity in data | filter:query | orderBy:sortField" ng-if="activity.min_time < (time || 1000)">
-      <td>{{activity.name}}</td>
-      <td>{{activity.home}}</td>
-      <td>{{activity.specific}}</td>
-      <td>{{activity.mental_attention}}</td>
-      <td>{{activity.movement}}</td>
-      <td>{{activity.min_time}}</td>
-      <td>{{activity.max_time}}</td>
+    <tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 1000)">
+      <td>
+        {{activity.name}}</br>
+        <input ng-model="activity.name" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.home}}</br>
+        <input ng-model="activity.home" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.specific}}</br>
+        <input ng-model="activity.specific" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.mental_attention}}</br>
+        <input ng-model="activity.mental_attention" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.movement}}</br>
+        <input ng-model="activity.movement" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.min_time}}</br>
+        <input ng-model="activity.min_time" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.max_time}}</br>
+        <input ng-model="activity.max_time" ng-show="activity.editorEnabled">
+      </td>
+      <td>
+        {{activity.id}}</br>
+      </td>
+      <td><button ng-click="edit(activity)">Edit</button></td>
+      <td><button ng-show="activity.editorEnabled"  ng-click="done(activity)">Done</button></td>
+      <!-- <td><input type="text" ng-model="activity.name" /></td> -->
+
+
 
     </tr>
   </table>

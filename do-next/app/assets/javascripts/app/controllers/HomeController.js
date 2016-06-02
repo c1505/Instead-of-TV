@@ -1,15 +1,24 @@
 function HomeController ($scope, Activities) {
   $scope.data = Activities.index();
+  $scope.edit = function(activity) {
+    activity.editorEnabled = true;
+  }
+  $scope.done = function(activity) {
+    activity.editorEnabled = false;
+  }
   $scope.addItem= function() {
-    $scope.data.push({
-      "name":$scope.name,
+    var item = {
+       "name":$scope.name,
        "home":$scope.home,
        "specific":$scope.specific,
        "mental_attention":$scope.mental_attention,
        "movement":$scope.movement,
        "min_time":$scope.min_time,
        "max_time":$scope.max_time
-    });
+    };
+    Activities.create({"activity":item});
+    // should add some sort of success action
+    $scope.data.push(item);
     $scope.name = '';
     $scope.home = '';
     $scope.specific = '';
@@ -17,13 +26,13 @@ function HomeController ($scope, Activities) {
     $scope.movement = '';
     $scope.min_time = '';
     $scope.max_time = '';
-
   };
 
   $scope.picked = [];
   $scope.sortField = 'min_time';
 
   $scope.choose = function() {
+    // this is long and should be pulled out into a service or separate controller
     $scope.picked = [];
     var count = 0;
     var numArray = [];
@@ -44,137 +53,6 @@ function HomeController ($scope, Activities) {
     $scope.time1 = "";
     $scope.home1 = "";
   }
-
-//   $scope.data = [
-//  {
-//    "name":"Baseball Game",
-//    "home":"away",
-//    "specific":"general",
-//    "active":"lazy",
-//    "minTime":180,
-//    "maxTime":240
-//  },
-//  {
-//    "name":"Netlfix",
-//    "home":"home",
-//    "specific":"general",
-//    "active":"lazy",
-//    "minTime":30,
-//    "maxTime":180
-//  },
-//  {
-//    "name":"Veep ",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"lazy",
-//    "minTime":30,
-//    "maxTime":30
-//  },
-//  {
-//    "name":"Game of thrones",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"lazy",
-//    "minTime":60,
-//    "maxTime":60
-//  },
-//  {
-//    "name":"Eno River Hike",
-//    "home":"away",
-//    "specific":"specific",
-//    "active":"active",
-//    "minTime":120,
-//    "maxTime":240
-//  },
-//  {
-//    "name":"Walk",
-//    "home":"home",
-//    "specific":"general",
-//    "active":"active",
-//    "minTime":10,
-//    "maxTime":60
-//  },
-//  {
-//    "name":"Scrabble",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"lazy",
-//    "minTime":30,
-//    "maxTime":90
-//  },
-//  {
-//    "name":"Dance off dance central",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"active",
-//    "minTime":10,
-//    "maxTime":60
-//  },
-//  {
-//    "name":"color",
-//    "home":"home",
-//    "specific":"general",
-//    "active":"lazy",
-//    "minTime":5,
-//    "maxTime":60
-//  },
-//  {
-//    "name":"cook blue apron",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"lazy",
-//    "minTime":20,
-//    "maxTime":90
-//  },
-//  {
-//    "name":"cook other",
-//    "home":"home",
-//    "specific":"general",
-//    "active":"lazy",
-//    "minTime":10,
-//    "maxTime":360
-//  },
-//  {
-//    "name":"Frisbee",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"active",
-//    "minTime":10,
-//    "maxTime":30
-//  },
-//  {
-//    "name":"Jump Rope",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"active",
-//    "minTime":10,
-//    "maxTime":10
-//  },
-//  {
-//    "name":"Bubbles",
-//    "home":"home",
-//    "specific":"specific",
-//    "active":"lazy",
-//    "minTime":5,
-//    "maxTime":5
-//  },
-//  {
-//    "name":"Indoor Climbing at TRC",
-//    "home":"away",
-//    "specific":"specific",
-//    "active":"active",
-//    "minTime":60,
-//    "maxTime":240
-//  },
-//   {
-//    "name":"Duke gardens",
-//    "home":"away",
-//    "specific":"specific",
-//    "active":"active",
-//    "minTime":60,
-//    "maxTime":180
-//  }
-// ];
 }
 
 angular

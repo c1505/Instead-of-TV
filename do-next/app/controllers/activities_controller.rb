@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
 
   private
     def activity_params
-      params.require(:activities).permit(:name, :home, :specific, :mental_attention, :movement, :min_time, :max_time)
+      params.require(:activity).permit(:name, :home, :specific, :mental_attention, :movement, :min_time, :max_time)
     end
 
 end
