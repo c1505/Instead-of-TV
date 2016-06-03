@@ -1,4 +1,4 @@
-function HomeController ($scope, Activities) {
+function HomeController ($scope, Activities, $http) {
   $scope.data = Activities.index();
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
@@ -15,7 +15,22 @@ function HomeController ($scope, Activities) {
        "min_time":activity.min_time,
        "max_time":activity.max_time
     };
-    Activities.update(item)
+    // Activities.update(item)
+    $http({
+      method: 'PATCH',
+      url: '/activities/' + activity.id,
+      data: { "activity":item}
+    })
+  }
+  $scope.delete = function(activity) {
+    // should have an alert, are you shure 
+    $http({
+      method: 'DELETE',
+      url: '/activities/' + activity.id
+      // data: { "activity":item}
+    })
+    $scope.data = Activities.index();
+    // this is a dumb additional request.  time to implement with $resources
   }
   $scope.addItem= function() {
     var item = {

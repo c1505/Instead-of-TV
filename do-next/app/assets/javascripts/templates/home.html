@@ -67,11 +67,10 @@
         {{activity.max_time}}</br>
         <input ng-model="activity.max_time" ng-show="activity.editorEnabled">
       </td>
-      <td>
-        {{activity.id}}</br>
-      </td>
       <td><button ng-click="edit(activity)">Edit</button></td>
       <td><button ng-show="activity.editorEnabled"  ng-click="done(activity)">Done</button></td>
+      <td><button ng-click="delete(activity)">Delete</button></td>
+
       <!-- <td><input type="text" ng-model="activity.name" /></td> -->
 
 
