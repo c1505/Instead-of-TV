@@ -44,6 +44,9 @@ angular
 
       })
       .state('activities.item', {
-        
+      })
+      .state('discover', {
+        url: '/discover',
+        templateUrl: 'discover.html'
       })
   });
