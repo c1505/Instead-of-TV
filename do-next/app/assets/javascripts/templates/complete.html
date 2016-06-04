@@ -1,1 +1,7 @@
-is it working
+Name: {{data.activity.name}}
+<div ng-repeat="completes in data.activity.completes">
+  Notes:{{completes.note}} |
+  Rating: {{completes.rating}} |
+  Date: {{completes.created_at | date:'medium'}}
+
+</div>

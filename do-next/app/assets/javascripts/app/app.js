@@ -47,7 +47,13 @@ angular
         templateUrl: 'discover.html'
       })
       .state('complete', {
-        url: '/activities/:id',
-        templateUrl: 'complete.html'
+        url: '/completes/:id',
+        templateUrl: 'complete.html',
+        controller: 'CompleteController as complete',
+        resolve: {
+          complete: function ($http, $stateParams) {
+            return $http.get('/activities/' + $stateParams.id)
+          }
+        }
       })
   });

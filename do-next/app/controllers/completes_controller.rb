@@ -1,2 +1,0 @@
-class CompletesController < ApplicationController
-end
