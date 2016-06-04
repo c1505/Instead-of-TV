@@ -1,4 +1,4 @@
-function HomeController ($scope, Activities, $http) {
+function ActivitiesController ($scope, Activities, $http) {
   $scope.data = Activities.index();
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
@@ -84,4 +84,4 @@ function HomeController ($scope, Activities, $http) {
 
 angular
   .module('app')
-  .controller('HomeController', HomeController);
+  .controller('ActivitiesController', ActivitiesController);

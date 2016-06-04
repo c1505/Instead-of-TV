@@ -27,10 +27,10 @@ angular
           }
         }
       })
-      .state('home', {
-        url: '/home',
-        templateUrl: 'home.html',
-        controller: "HomeController"
+      .state('activities', {
+        url: '/activities',
+        templateUrl: 'activities.html',
+        controller: "ActivitiesController"
       })
       .state('picker', {
         url: '/picker',
@@ -40,9 +40,6 @@ angular
       .state('home.item', {
 
       })
-      .state('activities', {
-
-      })
       .state('activities.item', {
       })
       .state('discover', {
@@ -50,7 +47,7 @@ angular
         templateUrl: 'discover.html'
       })
       .state('complete', {
-        url: '/complete',
+        url: '/activities/:id',
         templateUrl: 'complete.html'
       })
   });
