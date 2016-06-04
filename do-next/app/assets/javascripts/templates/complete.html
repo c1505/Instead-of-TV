@@ -1,7 +1,24 @@
-Name: {{data.activity.name}}
-<div ng-repeat="completes in data.activity.completes">
-  Notes:{{completes.note}} |
-  Rating: {{completes.rating}} |
-  Date: {{completes.created_at | date:'medium'}}
 
+<h2>Name: {{data.activity.name}}</h2>
+Rating:
+<select>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+
+</select>
+Notes: <input>
+<button>Submit</button></br>
+
+<div class="box">
+maybe hide these ratings with a button or until a rating is submitted
+
+  <div ng-repeat="completes in data.activity.completes">
+    Notes:{{completes.note}} |
+    Rating: {{completes.rating}} |
+    Date: {{completes.created_at | date:'medium'}}
+
+  </div>
 </div>
