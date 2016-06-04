@@ -49,4 +49,8 @@ angular
         url: '/discover',
         templateUrl: 'discover.html'
       })
+      .state('complete', {
+        url: '/complete',
+        templateUrl: 'complete.html'
+      })
   });
