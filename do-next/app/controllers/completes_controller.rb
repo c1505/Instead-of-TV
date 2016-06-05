@@ -7,4 +7,10 @@ class CompletesController < ApplicationController
     render json: activity, serializer: ActivityCompleteSerializer
   end
 
+  def destroy
+    complete = Complete.find(params[:id])
+    complete.destroy
+    render json: complete
+  end
+
 end

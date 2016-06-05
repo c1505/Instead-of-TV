@@ -41,9 +41,9 @@ angular
         url: '/discover',
         templateUrl: 'discover.html'
       })
-      .state('complete', {
-        url: '/completes/:id',
-        templateUrl: 'complete.html',
+      .state('activity', {
+        url: '/activities/:id',
+        templateUrl: 'activity.html',
         controller: 'CompleteController as complete',
         resolve: {
           complete: function ($http, $stateParams) {
@@ -51,4 +51,5 @@ angular
           }
         }
       })
+      
   });
