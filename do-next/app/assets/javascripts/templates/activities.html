@@ -5,8 +5,8 @@
   Available Time: <input ng-model="time" type="text"/>
 </div>
 
-<form class="box" ng-submit="addItem()">
-  Activity Name:<input type="text" ng-model="name"></br>
+<form name="form" class="box" ng-submit="form.$valid && addItem()">
+  Activity Name:<input required="required" type="text" ng-model="name"></br>
 
   <input type="radio" ng-model="home" value="home">Home</input>
   <input type="radio" ng-model="home" value="away">Away</br>
