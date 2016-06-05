@@ -1,6 +1,5 @@
 function CompleteController ($scope, complete, $http, $stateParams) {
   $scope.data = complete.data;
-  // console.log($stateParams)
   $scope.create = function(){
     $http({
       method: 'POST',
@@ -15,10 +14,3 @@ function CompleteController ($scope, complete, $http, $stateParams) {
 angular
   .module('app')
   .controller('CompleteController', CompleteController);
-
-
-  // $http({
-  //     method: 'PATCH',
-  //     url: '/activities/' + activity.id,
-  //     data: { "activity":item}
-  //   })
