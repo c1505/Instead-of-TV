@@ -1,5 +1,6 @@
 function ActivitiesController ($scope, Activities, $http) {
   $scope.data = Activities.index();
+  console.log($scope.data)
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
   }
