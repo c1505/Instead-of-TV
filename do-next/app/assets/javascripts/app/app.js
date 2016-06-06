@@ -35,7 +35,7 @@ angular
       .state('picker', {
         url: '/picker',
         templateUrl: 'picker.html',
-        controller: "HomeController"
+        controller: "ActivitiesController"
       })
       .state('discover', {
         url: '/discover',

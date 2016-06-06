@@ -1,32 +1,45 @@
+<h2>Activities</h2>
+<div class="row">
+  <div class="col-md-4">
+    <div class="box">
+    <h2>Search Activities</h2>
+    Query: <input ng-model="query" type="text"/></br>
+    Available Time: <input ng-model="time" type="text"/>
+  </div>
 
-<div class="box">
-  <h2>Search Table</h2>
-  Query: <input ng-model="query" type="text"/></br>
-  Available Time: <input ng-model="time" type="text"/>
+
+  </div>
+  <div class="col-md-4">
+        <form name="form" class="box" ng-submit="form.$valid && addItem()">
+      <h2>New Activity</h2>
+
+      Activity Name:<input required="required" type="text" ng-model="name"></br>
+
+      <input type="radio" ng-model="home" value="home">Home</input>
+      <input type="radio" ng-model="home" value="away">Away</br>
+
+      <input type="radio" ng-model="movement" value="sedentary">Sedentary</input>
+      <input type="radio" ng-model="movement" value="walking">Walking
+      <input type="radio" ng-model="movement" value="vigorous">Vigorous</br>
+
+
+      <input type="radio" ng-model="specific" value="specific">Specific</input>
+      <input type="radio" ng-model="specific" value="general">General</br>
+
+      Mental Attention:<input type="text" ng-model="mental_attention"></br>
+
+      Minimum Time:<input type="text" ng-model="min_time"></br>
+      Maximum Time:<input type="text" ng-model="max_time"></br>
+      <input type="submit" value="add">
+    </form>
+
+  </div>
 </div>
 
-<form name="form" class="box" ng-submit="form.$valid && addItem()">
-  Activity Name:<input required="required" type="text" ng-model="name"></br>
-
-  <input type="radio" ng-model="home" value="home">Home</input>
-  <input type="radio" ng-model="home" value="away">Away</br>
-
-  <input type="radio" ng-model="movement" value="sedentary">Sedentary</input>
-  <input type="radio" ng-model="movement" value="walking">Walking
-  <input type="radio" ng-model="movement" value="vigorous">Vigorous</br>
 
 
-  <input type="radio" ng-model="specific" value="specific">Specific</input>
-  <input type="radio" ng-model="specific" value="general">General</br>
 
-  Mental Attention:<input type="text" ng-model="mental_attention"></br>
-
-  Minimum Time:<input type="text" ng-model="min_time"></br>
-  Maximum Time:<input type="text" ng-model="max_time"></br>
-  <input type="submit" value="add">
-</form>
-
-  <table>
+  <table class="table">
     <tr>
       <th><a href="" ng-click="sortField = 'name'">Name</a></th>
       <th><a href="" ng-click="sortField = 'home'">Home</a></th>
@@ -67,16 +80,10 @@
         {{activity.max_time}}</br>
         <input ng-model="activity.max_time" ng-show="activity.editorEnabled">
       </td>
-      <td><button ng-click="edit(activity)">Edit</button></td>
-      <td><button ng-show="activity.editorEnabled"  ng-click="done(activity)">Done</button></td>
-      <td><button ng-click="delete(activity)">Delete</button></td>
-      <td><a href="" ui-sref="activity({id: activity.id})">complete</a></td>
-
-
-
-      <!-- <td><input type="text" ng-model="activity.name" /></td> -->
-
-
+      <td><button type="button" class="btn btn-primary" ng-click="edit(activity)">Edit</button></td>
+      <td><button type="button" class="btn btn-success" ng-show="activity.editorEnabled"  ng-click="done(activity)">Done</button></td>
+      <td><button type="button" class="btn btn-danger" ng-click="delete(activity)">Delete</button></td>
+      <td><a type="button" class="btn btn-success href="" ui-sref="activity({id: activity.id})">complete</a></td>
 
     </tr>
   </table>
