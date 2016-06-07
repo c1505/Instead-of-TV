@@ -1,5 +1,5 @@
 
-<h2>Name: {{data.activity_complete.name}}</h2>
+<h2>Name: {{data.name}}</h2>
 <form ng-submit="create()">
   Rating:
   <select ng-model="rating">
@@ -17,7 +17,7 @@
 <div class="box">
 maybe hide these ratings with a button or until a rating is submitted
 
-  <div ng-repeat="completes in data.activity_complete.completes">
+  <div ng-repeat="completes in data.completes">
     Notes:{{completes.note}} |
     Rating: {{completes.rating}} |
     Date: {{completes.created_at | date:'medium'}} |

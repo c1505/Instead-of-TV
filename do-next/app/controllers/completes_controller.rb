@@ -4,7 +4,7 @@ class CompletesController < ApplicationController
     activity = Activity.find(params[:activity_id])
     complete = activity.completes.build(rating: params[:rating], note: params[:note])
     complete.save
-    render json: activity, serializer: ActivityCompleteSerializer
+    render json: complete
   end
 
   def destroy
