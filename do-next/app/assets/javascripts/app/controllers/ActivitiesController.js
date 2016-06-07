@@ -23,18 +23,15 @@ function ActivitiesController ($scope, Activities, $http) {
     })
   }
   $scope.delete = function(activity) {
-    // should have an alert, are you shure 
     $http({
       method: 'DELETE',
       url: '/activities/' + activity.id
-      // data: { "activity":item}
+    }).success(function(){
+      $scope.data.splice( $scope.data.indexOf(activity), 1);
     })
-    $scope.data = Activities.index();
-    // this is a dumb additional request.  time to implement with $resources
   }
   $scope.addItem= function() {
     var item = {
-      // using this more than once.  maybe also pull it out
        "name":$scope.name,
        "home":$scope.home,
        "specific":$scope.specific,
@@ -43,9 +40,13 @@ function ActivitiesController ($scope, Activities, $http) {
        "min_time":$scope.min_time,
        "max_time":$scope.max_time
     };
-    Activities.create({"activity":item});
-    // should add some sort of success action
-    $scope.data.push(item);
+    $http({
+      method: 'POST',
+      url: '/activities',
+      data: { "activity":item}
+    }).success(function(data){
+      $scope.data.push(data)
+    })
     $scope.name = '';
     $scope.home = '';
     $scope.specific = '';
@@ -54,7 +55,6 @@ function ActivitiesController ($scope, Activities, $http) {
     $scope.min_time = '';
     $scope.max_time = '';
   };
-
   $scope.picked = [];
   $scope.sortField = 'min_time';
 
