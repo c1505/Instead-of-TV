@@ -1,4 +1,4 @@
-function ActivitiesController ($scope, $http, activities) {
+function ActivitiesController ($scope, $http, activities, ActivitiesService, RandomService) {
   $scope.data = activities.data
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
@@ -15,6 +15,7 @@ function ActivitiesController ($scope, $http, activities) {
        "min_time":activity.min_time,
        "max_time":activity.max_time
     };
+
     $http({
       method: 'PATCH',
       url: '/activities/' + activity.id,
