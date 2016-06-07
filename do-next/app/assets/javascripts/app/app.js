@@ -30,7 +30,12 @@ angular
       .state('activities', {
         url: '/activities',
         templateUrl: 'activities.html',
-        controller: "ActivitiesController"
+        controller: "ActivitiesController as activities",
+        resolve: {
+          activities: function($http) {
+            return $http.get('/activities')
+          }
+        }
       })
       .state('picker', {
         url: '/picker',
