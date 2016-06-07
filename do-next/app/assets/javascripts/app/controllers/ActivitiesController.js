@@ -15,7 +15,6 @@ function ActivitiesController ($scope, Activities, $http) {
        "min_time":activity.min_time,
        "max_time":activity.max_time
     };
-    // Activities.update(item)
     $http({
       method: 'PATCH',
       url: '/activities/' + activity.id,
