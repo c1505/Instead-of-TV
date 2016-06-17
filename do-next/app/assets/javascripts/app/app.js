@@ -40,7 +40,12 @@ angular
       .state('picker', {
         url: '/picker',
         templateUrl: 'picker.html',
-        controller: "ActivitiesController"
+        controller: "ActivitiesController as activities",
+        resolve: {
+          activities: function($http) {
+            return $http.get('/activities')
+          }
+        }
       })
       .state('discover', {
         url: '/discover',
