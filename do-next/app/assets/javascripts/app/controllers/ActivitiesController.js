@@ -29,15 +29,11 @@ function ActivitiesController ($scope, $http, activities, ActivitiesService, Ran
     })
   }
 
-  $scope.addItem= function() {
-    $http({
-      method: 'POST',
-      url: '/activities',
-      data: { "activity":$scope.new}
-    }).success(function(data){
+  $scope.create= function() {
+    ActivitiesService.create($scope.new).success(function(data){
       $scope.data.push(data)
+      $scope.new = '';
     })
-    $scope.new = '';
   };
 
   $scope.picked = [];

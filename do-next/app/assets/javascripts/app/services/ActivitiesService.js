@@ -14,8 +14,12 @@ function ActivitiesService($http) {
     
   }
 
-  this.alert = function() {
-    alert("does this work")
+  this.create = function(activity) {
+    return $http({
+      method: 'POST',
+      url: '/activities',
+      data: { "activity":activity}
+    })
   }
 
   this.delete = function(activity) {
