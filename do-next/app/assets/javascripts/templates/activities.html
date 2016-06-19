@@ -12,26 +12,26 @@
 
   </div>
   <div class="col-md-4">
-        <form name="form" class="box" ng-submit="form.$valid && addItem()">
+    <form name="form" class="box" ng-submit="form.$valid && addItem()">
       <h2>New Activity</h2>
 
-      Activity Name:<input required="required" type="text" ng-model="name"></br>
+      Activity Name:<input required="required" type="text" ng-model="new.name"></br>
 
-      <input type="radio" ng-model="home" value="home">Home</input>
-      <input type="radio" ng-model="home" value="away">Away</br>
+      <input type="radio" ng-model="new.home" value="home">Home</input>
+      <input type="radio" ng-model="new.home" value="away">Away</br>
 
-      <input type="radio" ng-model="movement" value="sedentary">Sedentary</input>
-      <input type="radio" ng-model="movement" value="walking">Walking
-      <input type="radio" ng-model="movement" value="vigorous">Vigorous</br>
+      <input type="radio" ng-model="new.movement" value="sedentary">Sedentary</input>
+      <input type="radio" ng-model="new.movement" value="walking">Walking
+      <input type="radio" ng-model="new.movement" value="vigorous">Vigorous</br>
 
 
-      <input type="radio" ng-model="specific" value="specific">Specific</input>
-      <input type="radio" ng-model="specific" value="general">General</br>
+      <input type="radio" ng-model="new.specific" value="specific">Specific</input>
+      <input type="radio" ng-model="new.specific" value="general">General</br>
 
-      Mental Attention:<input type="text" ng-model="mental_attention"></br>
+      Mental Attention:<input type="text" ng-model="new.mental_attention"></br>
 
-      Minimum Time:<input type="text" ng-model="min_time"></br>
-      Maximum Time:<input type="text" ng-model="max_time"></br>
+      Minimum Time:<input type="text" ng-model="new.min_time"></br>
+      Maximum Time:<input type="text" ng-model="new.max_time"></br>
       <input type="submit" value="add">
     </form>
 

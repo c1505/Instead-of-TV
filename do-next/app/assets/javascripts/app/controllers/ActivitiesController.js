@@ -30,30 +30,16 @@ function ActivitiesController ($scope, $http, activities, ActivitiesService, Ran
   }
 
   $scope.addItem= function() {
-    var item = {
-       "name":$scope.name,
-       "home":$scope.home,
-       "specific":$scope.specific,
-       "mental_attention":$scope.mental_attention,
-       "movement":$scope.movement,
-       "min_time":$scope.min_time,
-       "max_time":$scope.max_time
-    };
     $http({
       method: 'POST',
       url: '/activities',
-      data: { "activity":item}
+      data: { "activity":$scope.new}
     }).success(function(data){
       $scope.data.push(data)
     })
-    $scope.name = '';
-    $scope.home = '';
-    $scope.specific = '';
-    $scope.mental_attention = '';
-    $scope.movement = '';
-    $scope.min_time = '';
-    $scope.max_time = '';
+    $scope.new = '';
   };
+
   $scope.picked = [];
   $scope.sortField = 'min_time';
 
