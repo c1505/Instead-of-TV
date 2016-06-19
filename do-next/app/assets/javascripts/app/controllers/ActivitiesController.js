@@ -1,4 +1,5 @@
 function ActivitiesController ($scope, $http, activities, ActivitiesService, RandomService) {
+  
   $scope.data = activities.data
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
@@ -23,13 +24,11 @@ function ActivitiesController ($scope, $http, activities, ActivitiesService, Ran
     })
   }
   $scope.delete = function(activity) {
-    $http({
-      method: 'DELETE',
-      url: '/activities/' + activity.id
-    }).success(function(){
+    ActivitiesService.delete(activity).success(function(){
       $scope.data.splice( $scope.data.indexOf(activity), 1);
     })
   }
+
   $scope.addItem= function() {
     var item = {
        "name":$scope.name,

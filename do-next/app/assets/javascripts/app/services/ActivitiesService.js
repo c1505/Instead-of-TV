@@ -13,6 +13,17 @@ function ActivitiesService($http) {
   this.update = function() {
     
   }
+
+  this.alert = function() {
+    alert("does this work")
+  }
+
+  this.delete = function(activity) {
+    return $http({
+      method: 'DELETE',
+      url: '/activities/' + activity.id
+    })
+  }
 }
 
 angular

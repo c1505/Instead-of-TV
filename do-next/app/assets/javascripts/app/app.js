@@ -37,16 +37,6 @@ angular
           }
         }
       })
-      // .state('picker', {
-      //   url: '/picker',
-      //   templateUrl: 'picker.html',
-      //   controller: "ActivitiesController as activities",
-      //   resolve: {
-      //     activities: function($http) {
-      //       return $http.get('/activities')
-      //     }
-      //   }
-      // })
       .state('home.picker', {
         url: 'picker',
         templateUrl: 'picker.html',
@@ -62,7 +52,7 @@ angular
         url: 'discover',
         templateUrl: 'discover.html'
       })
-      .state('activity', {
+      .state('home.activity', {
         url: 'activities/:id',
         templateUrl: 'activity.html',
         controller: 'CompleteController as complete',
@@ -76,8 +66,4 @@ angular
         url: '/',
         templateUrl: "home.html"
       })
-      .state('home.notifications', {
-          url: 'notifications',
-          template: "i am a notification"
-        })
   });
