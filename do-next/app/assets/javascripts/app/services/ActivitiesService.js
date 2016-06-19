@@ -10,8 +10,12 @@ function ActivitiesService($http) {
     
   }
 
-  this.update = function() {
-    
+  this.update = function(activity) {
+    $http({
+      method: 'PATCH',
+      url: '/activities/' + activity.id,
+      data: { "activity":activity}
+    })
   }
 
   this.create = function(activity) {

@@ -4,24 +4,14 @@ function ActivitiesController ($scope, $http, activities, ActivitiesService, Ran
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
   }
-  $scope.done = function(activity) {
+  $scope.update = function(activity) {
     activity.editorEnabled = false;
-    var item = {
-      // using this more than once.  maybe also pull it out
-       "name":activity.name,
-       "home":activity.home,
-       "specific":activity.specific,
-       "mental_attention":activity.mental_attention,
-       "movement":activity.movement,
-       "min_time":activity.min_time,
-       "max_time":activity.max_time
-    };
-
-    $http({
-      method: 'PATCH',
-      url: '/activities/' + activity.id,
-      data: { "activity":item}
-    })
+    ActivitiesService.update(activity)
+    // $http({
+    //   method: 'PATCH',
+    //   url: '/activities/' + activity.id,
+    //   data: { "activity":activity}
+    // })
   }
   $scope.delete = function(activity) {
     ActivitiesService.delete(activity).success(function(){
