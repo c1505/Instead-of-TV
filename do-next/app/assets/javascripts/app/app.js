@@ -27,8 +27,8 @@ angular
           }
         }
       })
-      .state('activities', {
-        url: '/activities',
+      .state('home.activities', {
+        url: 'activities',
         templateUrl: 'activities.html',
         controller: "ActivitiesController as activities",
         resolve: {
@@ -37,8 +37,18 @@ angular
           }
         }
       })
-      .state('picker', {
-        url: '/picker',
+      // .state('picker', {
+      //   url: '/picker',
+      //   templateUrl: 'picker.html',
+      //   controller: "ActivitiesController as activities",
+      //   resolve: {
+      //     activities: function($http) {
+      //       return $http.get('/activities')
+      //     }
+      //   }
+      // })
+      .state('home.picker', {
+        url: 'picker',
         templateUrl: 'picker.html',
         controller: "ActivitiesController as activities",
         resolve: {
@@ -47,12 +57,13 @@ angular
           }
         }
       })
-      .state('discover', {
-        url: '/discover',
+
+      .state('home.discover', {
+        url: 'discover',
         templateUrl: 'discover.html'
       })
       .state('activity', {
-        url: '/activities/:id',
+        url: 'activities/:id',
         templateUrl: 'activity.html',
         controller: 'CompleteController as complete',
         resolve: {
@@ -61,5 +72,12 @@ angular
           }
         }
       })
-      
+      .state('home', {
+        url: '/',
+        templateUrl: "home.html"
+      })
+      .state('home.notifications', {
+          url: 'notifications',
+          template: "i am a notification"
+        })
   });
