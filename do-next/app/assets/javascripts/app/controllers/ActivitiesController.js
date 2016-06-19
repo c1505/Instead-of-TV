@@ -1,4 +1,4 @@
-function ActivitiesController ($scope, $http, activities, ActivitiesService, RandomService) {
+function ActivitiesController ($scope, activities, ActivitiesService, RandomService) {
   
   $scope.data = activities.data
   $scope.edit = function(activity) {
@@ -7,11 +7,6 @@ function ActivitiesController ($scope, $http, activities, ActivitiesService, Ran
   $scope.update = function(activity) {
     activity.editorEnabled = false;
     ActivitiesService.update(activity)
-    // $http({
-    //   method: 'PATCH',
-    //   url: '/activities/' + activity.id,
-    //   data: { "activity":activity}
-    // })
   }
   $scope.delete = function(activity) {
     ActivitiesService.delete(activity).success(function(){
