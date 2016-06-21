@@ -1,5 +1,5 @@
-function ActivitiesController ($scope, activities, ActivitiesService, RandomService) {
-  
+function ActivitiesController ($scope, activities, ActivitiesService) {
+
   $scope.data = activities.data
   $scope.edit = function(activity) {
     activity.editorEnabled = true;
@@ -25,26 +25,36 @@ function ActivitiesController ($scope, activities, ActivitiesService, RandomServ
   $scope.sortField = 'min_time';
 
   $scope.choose = function() {
-    // this is long and should be pulled out into a service or separate controller
     $scope.picked = [];
     var count = 0;
-    var numArray = [];
+    var indexArray = [];
     do {
-      count = count + 1;
-      do {
-        num = Math.floor( (Math.random() * ($scope.data.length - 1)) + 0 );
-        inArray = numArray.find(function(number){return number == this}, num)
+      count ++;
+
+      do { // finds a random index.  checks if that index is already in indexArray.  if it is, the loop continues.  
+        var index = randomIndex($scope.data);
+        inArray = indexArray.find(function(number){return number == this}, index) //returns true or false if 
       } while (inArray)
-      numArray.push(num);
-      if ( ($scope.data[num].min_time < $scope.time1) && ($scope.data[num].home == $scope.home1) ) {
-        $scope.picked.push($scope.data[num]);
-      }
+
+      indexArray.push(index); //adds the random index to numarray
+
+      addPassingActivity(index);
     } while ( ($scope.picked.length < 3) && (count < 100 ) )
+
     if ($scope.picked.length == 0) {
       alert("no matches found.  try again");
     }
-    $scope.time1 = "";
-    $scope.home1 = "";
+    $scope.pickedInput = "";
+  }
+
+  function randomIndex(array) {
+    return Math.floor( (Math.random() * (array.length)) + 0 );
+  }
+
+  function addPassingActivity(index) {
+    if ( ($scope.data[index].min_time < $scope.pickedInput.time) && ($scope.data[index].home == $scope.pickedInput.home) ) {
+      $scope.picked.push($scope.data[index]);
+    }
   }
 }
 
