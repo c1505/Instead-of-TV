@@ -1,4 +1,4 @@
-function CompleteController ($scope, complete, $http, $stateParams, CompleteService) {
+function CompleteController ($scope, complete, $stateParams, CompleteService) {
   $scope.data = complete.data.activity_complete;
   $scope.create = function(){
     var form_data = {"activity_id": $stateParams.id, "rating": $scope.rating, "note": $scope.note};
