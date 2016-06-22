@@ -30,6 +30,14 @@ class ActivitiesController < ApplicationController
     # i want a different response than this.  need to find what is appropriate.  200 + ok?
   end
 
+  def import
+    Activity.import(params[:file])
+    redirect_to root_url, notice: "Products Imported"
+  end
+
+  def upload
+  end
+
   private
     def activity_params
       params.require(:activity).permit(:name, :home, :specific, :mental_attention, :movement, :min_time, :max_time)

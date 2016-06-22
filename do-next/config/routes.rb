@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   root "application#index"
 
-  resources :activities
+
+  resources :activities do 
+    collection { post :import} 
+  end
+
+  get 'upload' => 'activities#upload'
+
 
   resources :completes
   # The priority is based upon order of creation: first created -> highest priority.
