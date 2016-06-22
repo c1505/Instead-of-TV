@@ -1,4 +1,10 @@
-<%= form_tag import_activities_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
+<h2>Add activities from a CSV file</h2>
+<p>The headers must correspond to the properties of each category and each activity is a new row.  If you are saving a csv from a spreadsheet, the spreadsheet should look like this.</p>
+<img src="http://i.imgur.com/YhpwDHL.png" alt="spreadsheet" width="800"></br>
+
+<div id="upload">
+  <%= form_tag import_activities_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
+</div>
