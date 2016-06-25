@@ -8,19 +8,19 @@
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5">5</option>
-
   </select>
   Notes: <input ng-model="note">
   <input type="submit" value="submit">
 </form>
 
 <div class="box">
-maybe hide these ratings with a button or until a rating is submitted
 
   <div ng-repeat="completes in data.completes">
-    Notes:{{completes.note}} |
-    Rating: {{completes.rating}} |
-    Date: {{completes.created_at | date:'medium'}} |
+    <strong> Notes:</strong>{{completes.note}}</br>
+    <strong> Rating: </strong> <form ng-submit="update(completes)">
+      <input type="text" value={{completes.rating}} ng-model="completes.rating"> |
+    </form>
+    <strong> Date:</strong> {{completes.created_at | date:'medium'}} |
     <button ng-click="destroy(completes)">Delete</button>
 
 

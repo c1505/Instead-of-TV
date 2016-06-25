@@ -12,6 +12,14 @@ function CompleteService($http) {
       url: '/completes/' + complete.id,
     });
   };
+
+  this.update = function(complete) {
+    return $http({
+      method: 'PATCH',
+      url: '/completes/' + complete.id,
+      data: { "rating":complete.rating}
+    });
+  };
 }
 angular
   .module('app')

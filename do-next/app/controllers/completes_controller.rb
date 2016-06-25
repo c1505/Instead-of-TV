@@ -13,4 +13,11 @@ class CompletesController < ApplicationController
     render json: complete
   end
 
+  def update
+    complete = Complete.find(params[:id])
+    # binding.pry
+    complete.update(rating: params[:rating])
+    render json: complete
+  end
+
 end

@@ -12,6 +12,13 @@ function CompleteController ($scope, complete, $stateParams, CompleteService) {
     });
   };
 
+  $scope.update = function(complete) {
+    CompleteService.update(complete).success(function(response) {
+      alert("updated");
+      console.log(response);
+    });
+  };
+
 }
 
 angular
