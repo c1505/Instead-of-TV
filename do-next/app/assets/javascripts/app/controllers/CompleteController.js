@@ -14,7 +14,9 @@ function CompleteController ($scope, complete, $stateParams, CompleteService) {
 
   $scope.update = function(complete) {
     CompleteService.update(complete).success(function(response) {
-      alert("updated");
+      index = $scope.data.completes.indexOf(complete);
+      $scope.data.completes[index].rating = response.rating;
+      alert("Update");
       console.log(response);
     });
   };
