@@ -9,7 +9,6 @@
 
 
   </div>
-  <div ng-include="activitiesTable.html"></div>
   <div class="col-md-4">
     <form name="form" class="box" ng-submit="form.$valid && create()">
       <h2>New Activity</h2>
@@ -50,7 +49,7 @@
       <th></th>
 
     </tr>
-    <tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 1000)">
+    <tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)">
       <td>
         {{activity.name}}</br>
         <input ng-model="activity.name" ng-show="activity.editorEnabled">
@@ -73,11 +72,11 @@
       </td>
       <td>
         {{activity.min_time}}</br>
-        <input ng-model="activity.min_time" ng-show="activity.editorEnabled">
+        <input ng-model="activity.min_time" ng-show="activity.editorEnabled" size="5">
       </td>
       <td>
         {{activity.max_time}}</br>
-        <input ng-model="activity.max_time" ng-show="activity.editorEnabled">
+        <input ng-model="activity.max_time" ng-show="activity.editorEnabled" size="5">
       </td>
       <td><button type="button" class="btn btn-primary" ng-click="edit(activity)">Edit</button></td>
       <td><button type="button" class="btn btn-success" ng-show="activity.editorEnabled"  ng-click="update(activity)">Done</button></td>

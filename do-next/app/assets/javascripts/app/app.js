@@ -8,7 +8,7 @@ angular
         controller: "ActivitiesController as activities",
         resolve: {
           activities: function($http) {
-            return $http.get('/activities')
+            return $http.get('/activities');
           }
         }
       })
@@ -18,11 +18,10 @@ angular
         controller: "ActivitiesController as activities",
         resolve: {
           activities: function($http) {
-            return $http.get('/activities')
+            return $http.get('/activities');
           }
         }
       })
-
       .state('home.discover', {
         url: 'discover',
         templateUrl: 'discover.html'
@@ -33,12 +32,12 @@ angular
         controller: 'CompleteController as complete',
         resolve: {
           complete: function ($http, $stateParams) {
-            return $http.get('/activities/' + $stateParams.id)
+            return $http.get('/activities/' + $stateParams.id);
           }
         }
       })
       .state('home', {
         url: '/',
         templateUrl: "home.html"
-      })
+      });
   });

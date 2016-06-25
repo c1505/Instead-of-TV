@@ -26,8 +26,7 @@ class ActivitiesController < ApplicationController
     activity = Activity.find(params[:id])
     activity.destroy
     activities = Activity.all
-    render json: activities
-    # i want a different response than this.  need to find what is appropriate.  200 + ok?
+    render json: activity
   end
 
   def import
