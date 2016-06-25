@@ -1,12 +1,19 @@
 var actTab = {
-  template: "<h1>I am a template</h1>",
-  controller: function() {
+  templateUrl: "activitiesTable.html",
+  bindings: {
+    activity: '='
   }
 };
 
 angular
   .module('app')
   .component('actTab', actTab)
+
+
+
+
+
+
 
 
 var Comments = {

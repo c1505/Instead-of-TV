@@ -9,6 +9,7 @@
 
 
   </div>
+  <div ng-include="activitiesTable.html"></div>
   <div class="col-md-4">
     <form name="form" class="box" ng-submit="form.$valid && create()">
       <h2>New Activity</h2>
@@ -32,11 +33,9 @@
       Maximum Time:<input type="text" ng-model="new.max_time"></br>
       <input type="submit" value="add">
     </form>
-
   </div>
+
 </div>
-
-
 
 
   <table class="table">

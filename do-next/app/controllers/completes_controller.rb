@@ -15,7 +15,6 @@ class CompletesController < ApplicationController
 
   def update
     complete = Complete.find(params[:id])
-    # binding.pry
     complete.update(rating: params[:rating])
     render json: complete
   end
