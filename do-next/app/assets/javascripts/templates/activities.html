@@ -51,31 +51,31 @@
     </tr>
     <tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)">
       <td>
-        {{activity.name}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.name}}</div></br>
         <input ng-model="activity.name" ng-show="activity.editorEnabled">
       </td>
       <td>
-        {{activity.home}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.home}}</div></br>
         <input ng-model="activity.home" ng-show="activity.editorEnabled">
       </td>
       <td>
-        {{activity.specific}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.specific}}</div></br>
         <input ng-model="activity.specific" ng-show="activity.editorEnabled">
       </td>
       <td>
-        {{activity.mental_attention}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.mental_attention}}</div></br>
         <input ng-model="activity.mental_attention" ng-show="activity.editorEnabled">
       </td>
       <td>
-        {{activity.movement}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.movement}}</div></br>
         <input ng-model="activity.movement" ng-show="activity.editorEnabled">
       </td>
       <td>
-        {{activity.min_time}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.min_time}}</div></br>
         <input ng-model="activity.min_time" ng-show="activity.editorEnabled" size="5">
       </td>
       <td>
-        {{activity.max_time}}</br>
+        <div ng-hide="activity.editorEnabled">{{activity.max_time}}</div></br>
         <input ng-model="activity.max_time" ng-show="activity.editorEnabled" size="5">
       </td>
       <td><button type="button" class="btn btn-primary" ng-click="edit(activity)">Edit</button></td>
