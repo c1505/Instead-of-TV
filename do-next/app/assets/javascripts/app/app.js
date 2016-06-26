@@ -39,5 +39,10 @@ angular
       .state('home', {
         url: '/',
         templateUrl: "home.html"
+      })
+      .state('home.sign_in', {
+        url: 'sign_in',
+        templateUrl: 'user_sessions/new.html',
+        controller: 'UserSessionsCtrl'
       });
   });
