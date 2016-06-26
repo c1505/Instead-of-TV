@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
-  root "application#index"
+  mount_devise_token_auth_for 'User', at: 'api/auth'
+  namespace :api do
+    resources :posts
+  end
+  # scope '/api' do
+  #   mount_devise_token_auth_for 'User', at: '/auth'
+  #   resources :groups, except: [:new, :edit]
+  # end
 
+  root "application#index"
 
   resources :activities do 
     collection { post :import} 

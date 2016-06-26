@@ -1,5 +1,17 @@
+// app.run(['$rootScope', '$location', function($rootScope, $location) {
+//   $rootScope.$on('auth:login-success', function() {
+//     $location.path('/');
+//   });
+// }]);
+
 angular
   .module('app', ['ui.router', 'templates', 'ngMessages', 'ng-token-auth'])
+  .factory('Post', ['railsResourceFactory', function(railsResourceFactory) {
+      return railsResourceFactory({
+        url: '/api/posts',
+        name: 'post'
+      });
+    }])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home.activities', {
@@ -11,6 +23,22 @@ angular
             return $http.get('/activities');
           }
         }
+      })
+      // .state('home.activities', {
+      //   url: 'activities',
+      //   templateUrl: 'activities.html',
+      //   controller: "ActivitiesController as activities",
+      //   resolve: {
+      //     activities: function($http) {
+      //       return $http.get('api/posts.json');
+      //     }
+      //   }
+      // })
+      .state('posts', {
+        url: '/posts',
+        templateUrl: 'posts.html',
+        controller: 'PostsController',
+        controllerAs: 'posts'
       })
       .state('home.picker', {
         url: 'picker',

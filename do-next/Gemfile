@@ -33,6 +33,10 @@ gem 'omniauth'
 
 gem 'devise'
 
+gem 'rack-cors'
+
+gem 'angularjs-rails-resource'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
