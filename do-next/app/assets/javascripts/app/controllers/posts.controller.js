@@ -18,6 +18,11 @@
         $scope.posts = response;
       });
 
+      $http.get('/api/activities').success(function(response) {
+        console.log(response)
+        $scope.activities = response;
+      });
+
       // when the user logs in, fetch the posts
       // $rootScope.$on('auth:login-success', function(ev, user) {
       //   $scope.posts = $http.get('/api/posts.json');

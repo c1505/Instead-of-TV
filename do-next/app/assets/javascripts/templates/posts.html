@@ -38,6 +38,8 @@
   <div class="panel panel-default">
   <div class="panel-heading">Posts</div>
     <div class="panel-body">
+      {{ activities[0] }}
+
       {{ posts }}
       <ul ng-repeat="post in posts" ng-if="user.signedIn">
         <li>{{ post.title }} - {{ post.body }} - {{ post.id }}</li>

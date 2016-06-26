@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
   namespace :api do
     resources :posts
+    resources :activities
   end
   # scope '/api' do
   #   mount_devise_token_auth_for 'User', at: '/auth'
@@ -10,9 +11,9 @@ Rails.application.routes.draw do
 
   root "application#index"
 
-  resources :activities do 
-    collection { post :import} 
-  end
+  # resources :activities do 
+  #   collection { post :import} 
+  # end
 
   get 'upload' => 'activities#upload'
 
