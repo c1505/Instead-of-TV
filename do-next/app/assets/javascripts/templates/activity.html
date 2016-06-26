@@ -10,7 +10,7 @@
     <option value="5">5</option>
   </select>
   Notes: <input ng-model="note">
-  <input type="submit" value="submit">
+  <input class="btn btn-primary" type="Submit" value="submit">
 </form>
 
 <div class="box">
@@ -18,11 +18,11 @@
   <div ng-repeat="completes in data.completes">
     <strong> Notes:</strong>{{completes.note}}</br>
     <strong> Rating: </strong> <form ng-submit="update(completes)">
-      <input type="text" value={{completes.rating}} ng-model="completes.rating"> |
+      <input type="text" value={{completes.rating}} ng-model="completes.rating">
+      <input class="btn btn-primary" type="submit" value="Update">
     </form>
     <strong> Date:</strong> {{completes.created_at | date:'medium'}} |
-    <button ng-click="destroy(completes)">Delete</button>
-
+    <button class="btn btn-danger" ng-click="destroy(completes)">Delete</button>
 
   </div>
 </div>
