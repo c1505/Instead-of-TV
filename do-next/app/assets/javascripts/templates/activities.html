@@ -13,7 +13,7 @@
     <form name="form" class="box" ng-submit="form.$valid && create()">
       <h2>New Activity</h2>
 
-      Activity Name:<input required="required" type="text" ng-model="new.name"></br>
+      Activity Name:<input required="required" ng-minlength="2" name="name" type="text" ng-model="new.name"></br>
 
       <input type="radio" ng-model="new.home" value="home">Home</input>
       <input type="radio" ng-model="new.home" value="away">Away</br>
@@ -31,6 +31,11 @@
       Minimum Time:<input type="text" ng-model="new.min_time"></br>
       Maximum Time:<input type="text" ng-model="new.max_time"></br>
       <input class="btn btn-primary" type="submit" value="add">
+
+      <div ng-messages="form.name.$error" style="color:maroon" role="alert" ng-if="form.name.$touched">
+        <div ng-message="required">You did not enter a name</div>
+        <div ng-message="minlength">The name is too short</div>
+      </div>
     </form>
   </div>
 
