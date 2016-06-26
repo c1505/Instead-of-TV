@@ -6,39 +6,43 @@
 
 angular
   .module('app', ['ui.router', 'templates', 'ngMessages', 'ng-token-auth'])
-  .factory('Post', ['railsResourceFactory', function(railsResourceFactory) {
-      return railsResourceFactory({
-        url: '/api/posts',
-        name: 'post'
-      });
-    }])
+  // .factory('Post', ['railsResourceFactory', function(railsResourceFactory) {
+  //     return railsResourceFactory({
+  //       url: '/api/posts',
+  //       name: 'post'
+  //     });
+  //   }])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home.activities', {
-        url: 'activities',
-        templateUrl: 'activities.html',
-        controller: "ActivitiesController as activities",
-        resolve: {
-          activities: function($http) {
-            return $http.get('/activities');
-          }
-        }
-      })
       // .state('home.activities', {
       //   url: 'activities',
       //   templateUrl: 'activities.html',
       //   controller: "ActivitiesController as activities",
       //   resolve: {
       //     activities: function($http) {
-      //       return $http.get('api/posts.json');
+      //       return $http.get('api/posts');
       //     }
       //   }
       // })
+      .state('home.activities', {
+        url: 'activities',
+        templateUrl: 'activities.html',
+        controller: "ActivitiesController as activities",
+        // resolve: {
+        //   activities: function($http) {
+        //     return $http.get('api/posts');
+        //   }
+        // }
+      })
       .state('posts', {
         url: '/posts',
         templateUrl: 'posts.html',
         controller: 'PostsController',
         controllerAs: 'posts'
+      })
+      .state('posts.test', {
+        url: 'test',
+        template: 'i am a template'
       })
       .state('home.picker', {
         url: 'picker',

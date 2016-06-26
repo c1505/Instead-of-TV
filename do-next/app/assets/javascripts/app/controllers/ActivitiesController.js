@@ -1,5 +1,5 @@
 function ActivitiesController ($scope, activities, ActivitiesService) {
-
+  
   $scope.data = activities.data;
 
   $scope.edit = function(activity) {
