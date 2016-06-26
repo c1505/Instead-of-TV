@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'templates', 'ngMessages'])
+  .module('app', ['ui.router', 'templates', 'ngMessages', 'ng-token-auth'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home.activities', {
