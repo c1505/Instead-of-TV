@@ -1,9 +1,8 @@
 angular.module('app')
-  .controller('ActivitiesController',function ($scope, ActivitiesService, $http) {
-
-  $http.get('/api/activities').success(function(response) {
+  .controller('RandomController',function ($scope, $http, ActivitiesService) {
+    $http.get('/api/activities').success(function(response) {
         console.log(response)
-        $scope.data = response;
+        $scope.activities = response;
       });
 
   $scope.edit = function(activity) {
@@ -62,3 +61,15 @@ angular.module('app')
   }
 
   });
+
+
+// function RandomController ($scope, ActivitiesService, $http) {
+//   $http.get('api/activities').success(function(response){
+//     $scope.data = response.data;
+//   });
+
+// }
+
+// angular
+//   .module('app')
+//   .controller('RandomController', RandomController);
