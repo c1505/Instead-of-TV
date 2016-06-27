@@ -41,17 +41,6 @@
 
 </div>
 
-<!-- <table >
-    <thead>
-        <th>id</th>
-        <th>name</th>
-        <th>description</th>
-    </thead>
-    <tbody>
-        <tr my-customer ng-repeat="row in ram"></tr>
-    </tbody>
-</table> -->
-
 <table class="table">
     <thead>
       <th><a href="" ng-click="sortField = 'name'">Name</a></th>
@@ -65,7 +54,7 @@
     <thead>
 
     <tbody>
-      <tr my-customer ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)"></tr>
+      <tr activity-row ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)"></tr>
     </tbody>
   </table>
 

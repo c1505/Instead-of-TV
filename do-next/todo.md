@@ -1,7 +1,6 @@
 
 Do
 
-2. Use directives for an activity row
 3. use ng-messages for validation on activity edit
 
 ping avi on slack when done
@@ -13,11 +12,9 @@ DONE
 
 1. Hide attribute data in edit mode.
 
-3. use ng-messages for validation on activity create
+2. Use directives for an activity row
+
+
+3A. use ng-messages for validation on activity create
 
 4. add devise and user authentication with ng-devise Auth.
-
-
-
-for some reason there are problems with replaceing a row with a directive
-worked to replace the whole table

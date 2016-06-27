@@ -1,6 +1,6 @@
 angular.module('app')
-.directive('myCustomer', function($compile) {
+.directive('activityRow', function($compile) {
   return {
     templateUrl: 'row.html'
-  }
+  };
 });
