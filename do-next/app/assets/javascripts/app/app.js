@@ -57,19 +57,14 @@ angular
         templateUrl: 'user_sessions/new.html',
         controller: 'UserSessionsCtrl'
       })
-      .state('home.random', {
-        url: 'random',
-        templateUrl: 'random.html',
-        controller: 'RandomController'
-      })
       .state('home.activities', {
         url: 'activities',
         templateUrl: 'activities.html',
         controller: "ActivitiesController",
-        // resolve: {
-        //   activities: function($http) {
-        //     return $http.get('api/posts');
-        //   }
-        // }
+      })
+      .state('home.register', {
+        url: 'register',
+        templateUrl: 'user_registrations.html',
+        controller: 'UserRegistrationsCtrl'
       });
   });
