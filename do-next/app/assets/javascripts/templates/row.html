@@ -1,16 +1,4 @@
-<table class="table">
-    <tr>
-      <th><a href="" ng-click="sortField = 'name'">Name</a></th>
-      <th><a href="" ng-click="sortField = 'home'">Home</a></th>
-      <th><a href="" ng-click="sortField = 'specific'">Specific</a></th>
-      <th><a href="" ng-click="sortField = 'mental_attention'">Mental Attention</a></th>
-      <th><a href="" ng-click="sortField = 'movement'">Movement</a></th>
-      <th><a href="" ng-click="sortField = 'min_time'">Min Time</a></th>
-      <th><a href="" ng-click="sortField = 'max_time'">Max Time</a></th>
-      <th></th>
-
-    </tr>
-    <tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)">
+<tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)">
       <td>
 
         <div ng-hide="activity.editorEnabled">{{activity.name}}</div></br>
@@ -46,4 +34,3 @@
       <td><a type="button" class="btn btn-success href="" ui-sref="home.activity({id: activity.id})">complete</a></td>
 
     </tr>
-  </table>

@@ -1,7 +1,8 @@
 angular.module('app')
 .directive('myCustomer', function() {
   return {
-    // templateUrl: 'my-customer.html'
+    replace: false,
+    transclude: true,
     templateUrl: 'row.html'
-  };
+  }
 });

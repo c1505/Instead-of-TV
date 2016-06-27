@@ -20,3 +20,4 @@ DONE
 
 
 for some reason there are problems with replaceing a row with a directive
+worked to replace the whole table
