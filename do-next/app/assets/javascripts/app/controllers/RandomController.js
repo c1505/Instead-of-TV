@@ -62,7 +62,18 @@ angular.module('app')
 
   });
 
+  // difference between this ******
 
+
+// angular.module('app')
+//   .controller('RandomController',function ($scope, $http, ActivitiesService) {
+//     $http.get('/api/activities').success(function(response) {
+//         console.log(response)
+//         $scope.activities = response;
+//       });
+
+
+// and this ************ caused it not to work?
 // function RandomController ($scope, ActivitiesService, $http) {
 //   $http.get('api/activities').success(function(response){
 //     $scope.data = response.data;

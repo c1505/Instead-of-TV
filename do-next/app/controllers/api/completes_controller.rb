@@ -1,5 +1,5 @@
-class CompletesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+class Api::CompletesController < ApplicationController
+  # skip_before_action :verify_authenticity_token
   def create
     activity = Activity.find(params[:activity_id])
     complete = activity.completes.build(rating: params[:rating], note: params[:note])

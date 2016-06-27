@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :posts
     resources :activities
+    resources :completes
   end
   # scope '/api' do
   #   mount_devise_token_auth_for 'User', at: '/auth'

@@ -2,7 +2,6 @@ angular.module('app')
   .controller('ActivitiesController',function ($scope, ActivitiesService, $http) {
 
   $http.get('/api/activities').success(function(response) {
-        console.log(response)
         $scope.data = response;
       });
 

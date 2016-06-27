@@ -1,17 +1,6 @@
-// app.run(['$rootScope', '$location', function($rootScope, $location) {
-//   $rootScope.$on('auth:login-success', function() {
-//     $location.path('/');
-//   });
-// }]);
 
 angular
   .module('app', ['ui.router', 'templates', 'ngMessages', 'ng-token-auth'])
-  // .factory('Post', ['railsResourceFactory', function(railsResourceFactory) {
-  //     return railsResourceFactory({
-  //       url: '/api/posts',
-  //       name: 'post'
-  //     });
-  //   }])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       // .state('home.activities', {
@@ -38,12 +27,12 @@ angular
       .state('home.picker', {
         url: 'picker',
         templateUrl: 'picker.html',
-        controller: "ActivitiesController as activities",
-        resolve: {
-          activities: function($http) {
-            return $http.get('/activities');
-          }
-        }
+        controller: "ActivitiesController"
+        // resolve: {
+        //   activities: function($http) {
+        //     return $http.get('/activities');
+        //   }
+        // }
       })
       .state('home.discover', {
         url: 'discover',
@@ -55,7 +44,7 @@ angular
         controller: 'CompleteController as complete',
         resolve: {
           complete: function ($http, $stateParams) {
-            return $http.get('/activities/' + $stateParams.id);
+            return $http.get('/api/activities/' + $stateParams.id);
           }
         }
       })
@@ -82,5 +71,5 @@ angular
         //     return $http.get('api/posts');
         //   }
         // }
-      })
+      });
   });
