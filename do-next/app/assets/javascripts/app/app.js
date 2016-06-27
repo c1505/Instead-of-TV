@@ -61,6 +61,11 @@ angular
         url: 'activities',
         templateUrl: 'activities.html',
         controller: "ActivitiesController",
+                resolve: {
+          activities: function($http) {
+            return $http.get('/api/activities');
+          }
+        }
       })
       .state('home.register', {
         url: 'register',

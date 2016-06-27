@@ -1,8 +1,6 @@
 angular.module('app')
-.directive('myCustomer', function() {
+.directive('myCustomer', function($compile) {
   return {
-    replace: false,
-    transclude: true,
     templateUrl: 'row.html'
   }
 });

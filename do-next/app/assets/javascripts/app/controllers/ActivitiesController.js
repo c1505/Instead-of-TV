@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('ActivitiesController',function ($scope, ActivitiesService, $http) {
+  .controller('ActivitiesController',function ($scope, ActivitiesService, $http, activities) {
 
   $http.get('/api/activities').success(function(response) {
         $scope.data = response;
@@ -59,5 +59,33 @@ angular.module('app')
       $scope.picked.push($scope.data[index]);
     }
   }
+
+  $scope.ram = [{
+        id: 1,
+        name: 'Fred',
+        description: 'not the best worker'
+    }, {
+        id: 1,
+        name: 'Wilma',
+        description: 'Freds Wife'
+    }, {
+        id: 1,
+        name: 'Barney',
+        description: 'Freds best friend'
+    }, {
+        id: 1,
+        name: 'Louise',
+        description: 'Never heard of Fred'
+    }, {
+        id: 1,
+        name: 'Tracy',
+        description: 'Some Chick'
+    }, {
+        id: 2,
+        name: 'Foo',
+        description: 'Inventer or bar'
+    }
+
+    ];
 
   });

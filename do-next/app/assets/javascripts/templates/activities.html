@@ -41,6 +41,17 @@
 
 </div>
 
+<!-- <table >
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+    </thead>
+    <tbody>
+        <tr my-customer ng-repeat="row in ram"></tr>
+    </tbody>
+</table> -->
+
 <table class="table">
     <thead>
       <th><a href="" ng-click="sortField = 'name'">Name</a></th>
@@ -54,42 +65,7 @@
     <thead>
 
     <tbody>
-    <tr ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)">
-      <td>
-
-        <div ng-hide="activity.editorEnabled">{{activity.name}}</div></br>
-        <input ng-model="activity.name" ng-show="activity.editorEnabled">
-      </td>
-      <td>
-        <div ng-hide="activity.editorEnabled">{{activity.home}}</div></br>
-        <input ng-model="activity.home" ng-show="activity.editorEnabled">
-      </td>
-      <td>
-        <div ng-hide="activity.editorEnabled">{{activity.specific}}</div></br>
-        <input ng-model="activity.specific" ng-show="activity.editorEnabled">
-      </td>
-      <td>
-        <div ng-hide="activity.editorEnabled">{{activity.mental_attention}}</div></br>
-        <input ng-model="activity.mental_attention" ng-show="activity.editorEnabled">
-      </td>
-      <td>
-        <div ng-hide="activity.editorEnabled">{{activity.movement}}</div></br>
-        <input ng-model="activity.movement" ng-show="activity.editorEnabled">
-      </td>
-      <td>
-        <div ng-hide="activity.editorEnabled">{{activity.min_time}}</div></br>
-        <input ng-model="activity.min_time" ng-show="activity.editorEnabled" size="5">
-      </td>
-      <td>
-        <div ng-hide="activity.editorEnabled">{{activity.max_time}}</div></br>
-        <input ng-model="activity.max_time" ng-show="activity.editorEnabled" size="5">
-      </td>
-      <td><button type="button" class="btn btn-primary" ng-click="edit(activity)">Edit</button></td>
-      <td><button type="button" class="btn btn-success" ng-show="activity.editorEnabled"  ng-click="update(activity)">Done</button></td>
-      <td><button type="button" class="btn btn-danger" ng-click="delete(activity)">Delete</button></td>
-      <td><a type="button" class="btn btn-success href="" ui-sref="home.activity({id: activity.id})">complete</a></td>
-
-    </tr>
+      <tr my-customer ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)"></tr>
     </tbody>
   </table>
 
