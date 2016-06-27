@@ -18,3 +18,5 @@ DONE
 4. add devise and user authentication with ng-devise Auth.
 
 
+
+for some reason there are problems with replaceing a row with a directive
