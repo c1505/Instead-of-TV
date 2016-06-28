@@ -9,7 +9,7 @@ angular.module('app')
     activity.editorEnabled = true;
   };
   $scope.update = function(activity) {
-    activity.editorEnabled = false;
+    // activity.editorEnabled = false;
     ActivitiesService.update(activity);
   };
   $scope.delete = function(activity) {
@@ -59,6 +59,12 @@ angular.module('app')
       $scope.picked.push($scope.data[index]);
     }
   }
+
+  $scope.ale = function() {
+    alert("this is an alert");
+  };
+
+  $scope.persons = [{name: 'Bob'}, {name: ''}, {name: 'Alice'}];
 
   $scope.ram = [{
         id: 1,

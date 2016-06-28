@@ -41,20 +41,20 @@
 
 </div>
 
-<table class="table">
-    <thead>
-      <th><a href="" ng-click="sortField = 'name'">Name</a></th>
-      <th><a href="" ng-click="sortField = 'home'">Home</a></th>
-      <th><a href="" ng-click="sortField = 'specific'">Specific</a></th>
-      <th><a href="" ng-click="sortField = 'mental_attention'">Mental Attention</a></th>
-      <th><a href="" ng-click="sortField = 'movement'">Movement</a></th>
-      <th><a href="" ng-click="sortField = 'min_time'">Min Time</a></th>
-      <th><a href="" ng-click="sortField = 'max_time'">Max Time</a></th>
-      <th></th>
-    <thead>
+<div class="box">
+  <div class="row">
+    <div class="col-md-2"><a href="" ng-click="sortField = 'name'">Name</a></div>
+    <div class="col-md-1"><a href="" ng-click="sortField = 'home'">Home</a></div>
+    <div class="col-md-1"><a href="" ng-click="sortField = 'specific'">Specific</a></div>
+    <div class="col-md-2"><a href="" ng-click="sortField = 'mental_attention'">Mental Attention</a></div>
+    <div class="col-md-1"><a href="" ng-click="sortField = 'movement'">Movement</a></div>
+    <div class="col-md-1"><a href="" ng-click="sortField = 'min_time'">Min Time</a></div>
+    <div class="col-md-1"><a href="" ng-click="sortField = 'max_time'">Max Time</a></div>
+  </div>
 
-    <tbody>
-      <tr activity-row ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)"></tr>
-    </tbody>
-  </table>
+
+  <form class="table" name="myFormNgMsg" ng-submit="update(activity)" novalidate>
+    <div activity-row ng-repeat="activity in data | filter:query | orderBy:sortField track by activity.id" ng-if="activity.min_time < (time || 10000)"></div>
+  </form>
+</div>
 

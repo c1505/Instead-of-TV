@@ -18,3 +18,6 @@ DONE
 3A. use ng-messages for validation on activity create
 
 4. add devise and user authentication with ng-devise Auth.
+
+
+i think this may be the solution for validation http://stackoverflow.com/questions/12044277/how-to-validate-inputs-dynamically-created-using-ng-repeat-ng-show-angular

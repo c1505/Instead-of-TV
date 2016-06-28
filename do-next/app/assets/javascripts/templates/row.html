@@ -1,55 +1,15 @@
-<tr>
-  <td  ng-hide="activity.editorEnabled">
-    <div >{{activity.name}}</div></br>
-  </td>
-  <td ng-hide="activity.editorEnabled">
-    <div>{{activity.home}}</div></br>
-  </td>
-  <td ng-hide="activity.editorEnabled">
-    <div>{{activity.specific}}</div></br>
-  </td>
-  <td ng-hide="activity.editorEnabled"> 
-    <div>{{activity.mental_attention}}</div></br>
-  </td>
-  <td ng-hide="activity.editorEnabled">
-    <div>{{activity.movement}}</div></br>
-  </td>
-  <td ng-hide="activity.editorEnabled">
-    <div>{{activity.min_time}}</div></br>
-  </td>
-  <td ng-hide="activity.editorEnabled">
-    <div>{{activity.max_time}}</div></br>
-  </td>
-  <form name=act ng-submit="update(activity)" ng-show="activity.editorEnabled">
-      <!-- <input class="btn btn-success" type="submit" ng-show="activity.editorEnabled" value="Done"> -->
 
-    <td>
-    <input type="text" required="required" ng-minlength="2" name="name" ng-model="activity.name" ng-show="activity.editorEnabled">
-    </td>
-    <td>
-      <input type="text" ng-model="activity.home" ng-show="activity.editorEnabled">
-    </td>
-    <td>
-      <input type="text" ng-model="activity.specific" ng-show="activity.editorEnabled">
-    </td>
-    <td>
-      <input type="text" ng-model="activity.mental_attention" ng-show="activity.editorEnabled">
-    </td>
-    <td>
-      <input type="text" ng-model="activity.movement" ng-show="activity.editorEnabled">
-    </td>
-    <td>
-      <input type="text" ng-model="activity.min_time" ng-show="activity.editorEnabled" size="5">
-    </td>
-    <td>
-      <input type="text" ng-model="activity.max_time" ng-show="activity.editorEnabled" size="5">
-    </td>
-  </form> 
-  
+<div class="row">
+  <input class="col-md-2" type="text" name="person_{{$index}}" ng-model="activity.name" required>
+  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.home">
+  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.specific">
+  <input class="col-md-2" type="text" name="city_{{$index}}" ng-model="activity.mental_attention">
+  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.movement">
+  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.min_time">
+  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.max_time">
+  <button type="button" class="btn btn-success"  ng-click="myFormNgMsg.$valid && update(activity) ">Update</button>
 
-  <td><button type="button" class="btn btn-primary" ng-click="edit(activity)">Edit</button></td>
-  <td><button type="button" class="btn btn-success" ng-show="activity.editorEnabled"  ng-click="act.$valid && update(activity)">Done</button></td>
-
-  <td><button type="button" class="btn btn-danger" ng-click="delete(activity)">Delete</button></td>
-  <td><a type="button" class="btn btn-success href="" ui-sref="home.activity({id: activity.id})">complete</a></td>
-</tr>
+  <span ng-messages="myFormNgMsg['person_' + $index].$error">
+    <span ng-message="required">Enter a name</span>
+  </span>
+</div>
