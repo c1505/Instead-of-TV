@@ -16,7 +16,12 @@ angular
       .state('home.picker', {
         url: 'picker',
         templateUrl: 'picker.html',
-        controller: "ActivitiesController"
+        controller: "ActivitiesController",
+        resolve: {
+          activities: function($http) {
+            return $http.get('/api/activities');
+          }
+        }
       })
       .state('home.discover', {
         url: 'discover',
@@ -45,7 +50,7 @@ angular
         url: 'activities',
         templateUrl: 'activities.html',
         controller: "ActivitiesController",
-                resolve: {
+        resolve: {
           activities: function($http) {
             return $http.get('/api/activities');
           }
