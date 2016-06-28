@@ -5,11 +5,7 @@ angular.module('app')
         $scope.data = response;
       });
 
-  $scope.edit = function(activity) {
-    activity.editorEnabled = true;
-  };
   $scope.update = function(activity) {
-    // activity.editorEnabled = false;
     ActivitiesService.update(activity);
   };
   $scope.delete = function(activity) {
@@ -59,39 +55,5 @@ angular.module('app')
       $scope.picked.push($scope.data[index]);
     }
   }
-
-  $scope.ale = function() {
-    alert("this is an alert");
-  };
-
-  $scope.persons = [{name: 'Bob'}, {name: ''}, {name: 'Alice'}];
-
-  $scope.ram = [{
-        id: 1,
-        name: 'Fred',
-        description: 'not the best worker'
-    }, {
-        id: 1,
-        name: 'Wilma',
-        description: 'Freds Wife'
-    }, {
-        id: 1,
-        name: 'Barney',
-        description: 'Freds best friend'
-    }, {
-        id: 1,
-        name: 'Louise',
-        description: 'Never heard of Fred'
-    }, {
-        id: 1,
-        name: 'Tracy',
-        description: 'Some Chick'
-    }, {
-        id: 2,
-        name: 'Foo',
-        description: 'Inventer or bar'
-    }
-
-    ];
 
   });

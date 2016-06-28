@@ -8,6 +8,7 @@
   <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.min_time">
   <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.max_time">
   <button type="button" class="btn btn-success"  ng-click="myFormNgMsg.$valid && update(activity) ">Update</button>
+  <button type="button" class="btn btn-danger" ng-click="delete(activity)">Delete</button>
 
   <span ng-messages="myFormNgMsg['person_' + $index].$error">
     <span ng-message="required">Enter a name</span>
