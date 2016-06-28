@@ -1,9 +1,7 @@
 angular.module('app')
   .controller('ActivitiesController',function ($scope, ActivitiesService, $http, activities) {
 
-  $http.get('/api/activities').success(function(response) {
-        $scope.data = response;
-      });
+  $scope.data = activities.data;
 
   $scope.update = function(activity) {
     ActivitiesService.update(activity);

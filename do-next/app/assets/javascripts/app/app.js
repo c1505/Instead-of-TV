@@ -3,17 +3,6 @@ angular
   .module('app', ['ui.router', 'templates', 'ngMessages', 'ng-token-auth'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      // .state('home.activities', {
-      //   url: 'activities',
-      //   templateUrl: 'activities.html',
-      //   controller: "ActivitiesController as activities",
-      //   resolve: {
-      //     activities: function($http) {
-      //       return $http.get('api/posts');
-      //     }
-      //   }
-      // })
-
       .state('posts', {
         url: '/posts',
         templateUrl: 'posts.html',
@@ -28,11 +17,6 @@ angular
         url: 'picker',
         templateUrl: 'picker.html',
         controller: "ActivitiesController"
-        // resolve: {
-        //   activities: function($http) {
-        //     return $http.get('/activities');
-        //   }
-        // }
       })
       .state('home.discover', {
         url: 'discover',

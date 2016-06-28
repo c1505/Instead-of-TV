@@ -4,11 +4,10 @@ Rails.application.routes.draw do
     resources :posts
     resources :activities
     resources :completes
+  get 'upload' => 'activities#upload'
+
   end
-  # scope '/api' do
-  #   mount_devise_token_auth_for 'User', at: '/auth'
-  #   resources :groups, except: [:new, :edit]
-  # end
+
 
   root "application#index"
 
@@ -16,7 +15,6 @@ Rails.application.routes.draw do
   #   collection { post :import} 
   # end
 
-  get 'upload' => 'activities#upload'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
