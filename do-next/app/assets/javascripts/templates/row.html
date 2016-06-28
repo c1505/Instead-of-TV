@@ -1,16 +1,16 @@
 
 <div class="row">
-  <input class="col-md-2" type="text" name="person_{{$index}}" ng-model="activity.name" required>
-  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.home">
-  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.specific">
-  <input class="col-md-2" type="text" name="city_{{$index}}" ng-model="activity.mental_attention">
-  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.movement">
-  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.min_time">
-  <input class="col-md-1" type="text" name="city_{{$index}}" ng-model="activity.max_time">
+  <input class="col-md-2" type="text" name="name_{{$index}}" ng-model="activity.name" required>
+  <input class="col-md-1" type="text" name="home{_{$index}}" ng-model="activity.home">
+  <input class="col-md-1" type="text" name="specific_{{$index}}" ng-model="activity.specific">
+  <input class="col-md-2" type="text" name="mental_attention_{{$index}}" ng-model="activity.mental_attention">
+  <input class="col-md-1" type="text" name="movement_{{$index}}" ng-model="activity.movement">
+  <input class="col-md-1" type="text" name="min_time_{{$index}}" ng-model="activity.min_time">
+  <input class="col-md-1" type="text" name="max_time_{{$index}}" ng-model="activity.max_time">
   <button type="button" class="btn btn-success"  ng-click="myFormNgMsg.$valid && update(activity) ">Update</button>
   <button type="button" class="btn btn-danger" ng-click="delete(activity)">Delete</button>
 
-  <span ng-messages="myFormNgMsg['person_' + $index].$error">
+  <span ng-messages="myFormNgMsg['name_' + $index].$error">
     <span ng-message="required">Enter a name</span>
   </span>
 </div>
