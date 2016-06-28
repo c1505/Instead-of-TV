@@ -18,6 +18,10 @@
   border: 10px solid rgba(0, 0, 0, 0.1);
   padding: 5px;
 }
+#activities {
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
 body {
   padding: 5px 10px 10px 5px;
 }
