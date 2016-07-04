@@ -15,7 +15,7 @@ function ActivitiesService($http) {
     });
   };
   this.update = function(activity) {
-    $http({
+    return $http({
       method: 'PATCH',
       url: '/api/activities/' + activity.id,
       data: { "activity":activity}

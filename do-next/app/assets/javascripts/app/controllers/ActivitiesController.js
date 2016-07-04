@@ -2,9 +2,12 @@ angular.module('app')
   .controller('ActivitiesController',function ($scope, ActivitiesService, $http, activities) {
 
   $scope.data = activities.data;
-
+  $scope.updated = false;
   $scope.update = function(activity) {
-    ActivitiesService.update(activity);
+    ActivitiesService.update(activity).success(function(response){
+      $scope.updated = true;
+      $scope.updatedName = response.name;
+    });
   };
   $scope.delete = function(activity) {
     ActivitiesService.delete(activity).success(function(){
