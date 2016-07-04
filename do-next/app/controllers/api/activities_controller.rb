@@ -2,41 +2,53 @@ class Api::ActivitiesController < ApplicationController
   # skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
   def index
-    activities = Activity.all
+    activities = Activity.where(user_id: current_user.id)
     render json: activities, root: false
   end
 
   def show
     activity = Activity.find(params[:id])
-    render json: activity, serializer: ActivityCompleteSerializer
+    if activity.user_id == current_user.id
+      render json: activity, serializer: ActivityCompleteSerializer
+    else
+      render :json => { :errors => activity.errors.full_messages }, :status => 422
+    end
   end
 
   def create
     activity = Activity.new(activity_params)
+    activity.user = current_user
     activity.save
     render json: activity
   end
 
   def update
     activity = Activity.find(params[:id])
-    activity.update(activity_params)
-    render json: activity
+    if activity.user_id == current_user.id
+      activity.update(activity_params)
+      render json: activity
+    else
+      render json: activity.errors, :status => :unprocessable_entity
+    end
   end
 
   def destroy
     activity = Activity.find(params[:id])
-    activity.destroy
-    activities = Activity.all
-    render json: activity
+    if activity.user_id == current_user.id
+      activity.destroy
+      render json: activity
+    else
+      render json: activity.errors, :status => :unprocessable_entity
+    end
   end
 
-  def import
-    Activity.import(params[:file])
-    redirect_to '#/activities'
-  end
+  # def import
+  #   Activity.import(params[:file])
+  #   redirect_to '#/activities'
+  # end
 
-  def upload
-  end
+  # def upload
+  # end
 
   private
     def activity_params

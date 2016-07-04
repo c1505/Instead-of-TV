@@ -4,21 +4,33 @@ class Api::CompletesController < ApplicationController
   
   def create
     activity = Activity.find(params[:activity_id])
-    complete = activity.completes.build(rating: params[:rating], note: params[:note])
-    complete.save
-    render json: complete
+    if activity.user_id = current_user.id
+      complete = activity.completes.build(rating: params[:rating], note: params[:note])
+      complete.save
+      render json: complete
+    else
+      render json: {}, :status => :unprocessable_entity
+    end
   end
 
   def destroy
     complete = Complete.find(params[:id])
-    complete.destroy
-    render json: complete
+    if complete.activity.user_id = current_user.id
+      complete.destroy
+      render json: complete
+    else
+      render json: {}, :status => :unprocessable_entity
+    end
   end
 
   def update
     complete = Complete.find(params[:id])
-    complete.update(rating: params[:rating])
-    render json: complete
+    if complete.activity.user_id = current_user.id
+      complete.update(rating: params[:rating])
+      render json: complete
+    else
+      render json: {}, :status => :unprocessable_entity
+    end
   end
 
 end

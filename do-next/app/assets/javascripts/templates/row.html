@@ -9,6 +9,7 @@
   <input class="col-md-1" type="text" name="max_time_{{$index}}" ng-model="activity.max_time">
   <button type="button" class="btn btn-success"  ng-click="myFormNgMsg.$valid && update(activity) ">Update</button>
   <button type="button" class="btn btn-danger" ng-click="delete(activity)">Delete</button>
+  <a type="button" class="btn btn-success href="" ui-sref="home.activity({id: activity.id})">complete</a>
 
   <span ng-messages="myFormNgMsg['name_' + $index].$error">
     <span ng-message="required">Enter a name</span>
