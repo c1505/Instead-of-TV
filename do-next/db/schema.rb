@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160626194934) do
     t.string   "movement"
     t.integer  "min_time"
     t.integer  "max_time"
+    t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

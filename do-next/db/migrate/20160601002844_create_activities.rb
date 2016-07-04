@@ -8,6 +8,7 @@ class CreateActivities < ActiveRecord::Migration
       t.string :movement
       t.integer :min_time
       t.integer :max_time
+      t.integer :user_id
 
       t.timestamps null: false
     end
