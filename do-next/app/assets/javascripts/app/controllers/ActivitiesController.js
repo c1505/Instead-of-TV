@@ -16,8 +16,10 @@ angular.module('app')
   };
 
   $scope.create= function() {
-    ActivitiesService.create($scope.new).success(function(data){
-      $scope.data.push(data);
+    ActivitiesService.create($scope.new).success(function(response){
+      $scope.data.push(response);
+      $scope.createName = response.name;
+      $scope.created = true;
       $scope.new = '';
     });
   };
